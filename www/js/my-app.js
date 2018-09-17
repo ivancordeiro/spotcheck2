@@ -3333,7 +3333,7 @@ function enviarSpotchecks(spotcheck_ids) {
 											
 											
 
-  myApp.alert("Erro 04: Não foi possível realizar o envio de E-mails. "+error_msg, "O servidor de mensagens está ocupado.");
+  // myApp.alert("Erro 04: Não foi possível realizar o envio de E-mails. "+error_msg, "O servidor de mensagens está ocupado.");
 										   
 
                                            /*

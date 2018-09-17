@@ -1,0 +1,69 @@
+
+<div data-page="selecionar-spotcheck" class="page">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left"><a href="programacao-atual.html" data-view=".mainView" data-force="true" data-ignore-cache="true" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+      <div class="center"><span class="nome_programacao"></span></div>
+      <div class="right"><a class="open-panel link icon-only"><i class="icon mdi mdi-checkbox-marked-outline"></i></a></div>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <div class="tabs-animated-wrap">
+
+      <div class="toolbar tabbar selecionar-obra-tabs">
+
+        <div class="toolbar-inner">
+
+          <a href="#tab5" class="active tab-link" onclick="mudaBotaoSpotcheck('btn-programacao')">
+            <i class="icon mdi mdi-alarm-check"></i>
+            Programação
+          </a>
+
+          <a href="#tab4" class="tab-link" onclick="mudaBotaoSpotcheck('btn-criar-spotcheck')">
+            <i class="icon mdi mdi-checkbox-marked"></i>
+            Spotchecks
+          </a>
+
+          <a href="#tab6" class="tab-link" onclick="mudaBotaoSpotcheck('btn-enviar-spotcheck')">
+            <i class="icon mdi mdi-cloud-upload"></i>
+            Enviar
+          </a>
+
+        </div>
+      </div>
+
+      <div class="tabs">
+
+        <div id="tab5" class="tab active">
+          <div class="list-block nomargin-vertical">
+            <!--Preenche via Ajax-->
+            <ul class="lista-subprogramacao"><li></li></ul>
+          </div> 
+        </div>
+
+        <div id="tab4" class="tab">
+          <div class="list-block nomargin-vertical">
+            <!--Preenche via Ajax-->
+            <ul class="lista-spotchecks"></ul>
+          </div>
+        </div>
+
+        <div id="tab6" class="tab">
+          <div class="list-block nomargin-vertical">
+            <!--Preenche via Ajax-->
+            <ul class="lista-spotchecks-para-enviar"></ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div id="btn-acao" class="toolbar btn-iniciar btn-criar-spotcheck" style="display: none;">
+    <a href="#" class="button button-fill button-big button-raised">Criar Novo Spotcheck</a>
+  </div>
+  <input type="hidden" id="status-subprogramacoes">
+</div>

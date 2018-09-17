@@ -1,0 +1,138 @@
+<div data-page="registra-rd" class="page">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left"><a href="forms.html" class="back link icon-only"><i class="icon icon-back"></i></a></div>
+      <div class="center">Registro de Desvio</div>
+      <div class="right"><a href="#" class="link open-panel icon-only"><i class="icon mdi mdi-checkbox-marked-outline"></i></a></div>
+    </div>
+  </div>
+  <div class="page-content">
+    <form id="form-spotcheck" class="store-data list-block nomargin-vertical">
+
+        <div class="card">
+          <div class="card-header">
+            <i class="icon mdi mdi-help-circle"></i>Relato Resumido do Desvio
+          </div>
+          <div class="card-content"> 
+            <div class="card-content-inner">
+              <div class="item-input">
+                <textarea id="relato" class="grande" placeholder="Toque aqui para digitar"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <i class="icon mdi mdi-help-circle"></i>Ações Tomadas
+          </div>
+          <div class="card-content"> 
+            <div class="card-content-inner">
+              <div class="item-input">
+                <textarea id="acoes_tomadas" class="grande" placeholder="Toque aqui para digitar"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <i class="icon mdi mdi-help-circle"></i>Fotos
+          </div>
+          <div class="card-content"> 
+            <div class="card-content-inner fotos-rd">
+
+              <div class="row">
+                <div class="col-33">
+                  <div class="img bg"></div>
+                  <a class="tirar-foto item-content" href=""><i class="icon mdi mdi-camera"></i></a>
+                </div>
+                <input type="hidden" id="foto1" name="foto1" value="" />
+
+                <div class="col-33">
+                  <div class="img bg"></div>
+                  <a class="tirar-foto item-content" href=""><i class="icon mdi mdi-camera"></i></a>
+                </div>
+                <input type="hidden" id="foto2" name="foto2" value="" />
+
+                <div class="col-33">
+                  <div class="img bg"></div>
+                  <a class="tirar-foto item-content" href=""><i class="icon mdi mdi-camera"></i></a>
+                </div>
+                <input type="hidden" id="foto3" name="foto3" value="" />
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <i class="icon mdi mdi-help-circle"></i>Criticidade
+          </div>
+          <div class="card-content"> 
+            <div class="card-content-inner">
+ 
+              <div class="list-block">
+                <ul>
+                  <li>
+                    <label class="label-radio item-content">
+                      <input type="radio" name="criticidade" value="Intolerável"/>
+                      <div class="item-media"><i class="icon icon-form-radio"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title" style="margin-top: 6px; width: auto;float: left;">A</div>
+                        <div class="item-after mini-cor cor-intoleravel" style="float: right; margin-top: 6px;"></div>
+                      </div>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="label-radio item-content">
+                      <input type="radio" name="criticidade" value="Substancial"/>
+                      <div class="item-media"><i class="icon icon-form-radio"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title" style="margin-top: 6px; width: auto;float: left;">B</div>
+                        <div class="item-after mini-cor cor-substancial" style="float: right; margin-top: 6px;"></div>
+                      </div>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="label-radio item-content">
+                      <input type="radio" name="criticidade" value="Trivial" />
+                      <div class="item-media"><i class="icon icon-form-radio"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title" style="margin-top: 6px; width: auto;float: left;">C</div>
+                        <div class="item-after mini-cor cor-trivial" style="float: right; margin-top: 6px;"></div>
+                      </div>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <i class="icon mdi mdi-help-circle"></i>Prazo de Correção
+          </div>
+          <div class="card-content"> 
+            <div class="card-content-inner">
+              <input type="text" placeholder="Toque para escolher uma data" id="calendar-input-rd" />
+            </div>
+          </div>
+        </div>
+
+        <div class="card registrar-ti"></div>
+
+    </form>
+
+
+  </div>
+
+
+  <div class="toolbar btn-iniciar btn-proxima-pergunta">
+    <a href="#" class="button button-fill button-big button-raised">Avançar</a>
+  </div>
+</div>

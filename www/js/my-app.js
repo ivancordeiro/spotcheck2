@@ -3334,7 +3334,7 @@ function enviarSpotchecks(spotcheck_ids) {
                                            // myApp.alert("Erro 04: Não foi possível realizar o envio de E-mails. "+error_msg, "O servidor de mensagens está ocupado.");
 										   
 										   
-										   myApp.alert('teste1: id_spotcheck_local:' + id_spotcheck_local + ', id_spotcheck_remoto:' + id_spotcheck_remoto );
+										  // myApp.alert('teste4: id_spotcheck_local:' + id_spotcheck_local + ', id_spotcheck_remoto:' + id_spotcheck_remoto );
 
                                             $("#enviando-spotcheck .lista-spotchecks-enviando a").each(function() {
                                                 if ($(this).find(".item-after").text() == "Enviando...") {

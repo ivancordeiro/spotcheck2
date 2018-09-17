@@ -3330,26 +3330,34 @@ function enviarSpotchecks(spotcheck_ids) {
                                             } else {
                                                 error_msg = "Erro desconhecido "+x.responseText+".";
                                             }
+											
+											
 
-                                           // myApp.alert("Erro 04: Não foi possível realizar o envio de E-mails. "+error_msg, "O servidor de mensagens está ocupado.");
+  myApp.alert("Erro 04: Não foi possível realizar o envio de E-mails. "+error_msg, "O servidor de mensagens está ocupado.");
 										   
-										   
-										  // myApp.alert('teste4: id_spotcheck_local:' + id_spotcheck_local + ', id_spotcheck_remoto:' + id_spotcheck_remoto );
 
-                                            $("#enviando-spotcheck .lista-spotchecks-enviando a").each(function() {
+                                           /*
+										   $("#enviando-spotcheck .lista-spotchecks-enviando a").each(function() {
                                                 if ($(this).find(".item-after").text() == "Enviando...") {
                                                     $(this).find(".item-after").text('E-mail falhou!');
                                                 }
-                                            });
+                                            }); 
+										   */
+										   
                                             //$("#enviando-spotcheck .lista-spotchecks-enviando li a[data-id="+id_spotcheck_local+"]").find(".item-after").html("Erro!");
 
                                             $("#enviando-spotcheck").append('<div class="toolbar btn-iniciar btn-voltar-spotchecks"><a href="#" class="button button-fill button-big button-raised">Voltar para Spotchecks</a></div>');
+											
                                             $("#enviando-spotcheck .btn-voltar-spotchecks").off().click(function() {
                                                 mainView.router.loadPage({
                                                     url: 'selecionar-spotcheck.html',
                                                     animatePages: false
                                                 });
+												
                                                 $(this).remove();
+												
+				
+												
                                             });
                                         }
                                     });

@@ -3531,7 +3531,7 @@ function enviarSpotchecks(spotcheck_ids) {
                                                     error_msg = "Erro desconhecido "+x.responseText+".";
                                                 }
 
-                                                myApp.alert("Erro 04: Não foi possível realizar o envio de E-mails. "+error_msg, "O servidor de mensagens está ocupado.");
+//myApp.alert("Erro 04: Não foi possível realizar o envio de E-mails. "+error_msg, "O servidor de mensagens está ocupado.");
 
                                                 $("#enviando-spotcheck .lista-spotchecks-enviando a").each(function() {
                                                     if ($(this).find(".item-after").text() == "Enviando...") {

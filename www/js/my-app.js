@@ -3272,7 +3272,7 @@ function enviarSpotchecks(spotcheck_ids) {
                                     $("#enviando-spotcheck .lista-spotchecks-enviando li a[data-id=" + id_spotcheck_local + "]").find(".item-after").html("Enviando e-mails...");
 									
 									
- myApp.alert( "id_spotcheck_local: " + id_spotcheck_local + ", id_spotcheck_remoto: "+id_spotcheck_remoto, "Teste1.");
+ //myApp.alert( "id_spotcheck_local: " + id_spotcheck_local + ", id_spotcheck_remoto: "+id_spotcheck_remoto, "Teste1.");
 
 									
                                     //Gera os relatórios e envia os e-mails

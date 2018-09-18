@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.trendengenhariakinross" version="1.0.3" android-versionCode="10015">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="kinross.br.com.spotchecktrend" version="1.0.3" android-versionCode="10015">
     <name>Spotcheck</name> 
     <description>
         Realização de Spotchecks por aplicativo.
     </description>
-    <author email="thalesu@gmail.com" href="http://cordova.io">
-        Publix Comunicação
+    <author email="ivancordeiro@yahoo.com.br" href="http://cordova.io">
+        Ivan Cordeiro
     </author>
  
     <content src="index.html"/>

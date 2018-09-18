@@ -7,7 +7,7 @@ if (document.location.hostname == "localhost") {
 }
 
     //url = "http://192.168.25.7/admin/app/";
-    //url = "http://dev.publixcomunicacao.com.br/trend-admin/app/";
+    // url = "http://dev.publixcomunicacao.com.br/trend-admin/app/";
 	url = "http://spotchecktrend.com.br/trend-admin/app/";
     //url = "http://192.168.25.7/admin/app/";
     
@@ -3270,10 +3270,7 @@ function enviarSpotchecks(spotcheck_ids) {
                                     var id_spotcheck_remoto = data[1];
 
                                     $("#enviando-spotcheck .lista-spotchecks-enviando li a[data-id=" + id_spotcheck_local + "]").find(".item-after").html("Enviando e-mails...");
-						
-						
-						//alert('teste1: id_spotcheck_local:' + + id_spotcheck_local ', id_spotcheck_remoto:' + id_spotcheck_remoto );
-						
+									
                                     //Gera os relatórios e envia os e-mails
                                     $.ajax({
                                         url: url + 'php/enviarEmailsSpotcheck.php',
@@ -3287,8 +3284,6 @@ function enviarSpotchecks(spotcheck_ids) {
                                             data = data.split("|");
                                             id_spotcheck_local = data[0];
                                             id_spotcheck_remoto = data[1];
-											
-											//alert('teste3: id_spotcheck_local:' + + id_spotcheck_local ', id_spotcheck_remoto:' + id_spotcheck_remoto );
                                             
                                             //Muda entregue para 1
                                             mudaAtributo("id", id_spotcheck_local, "entregue", "1", "spotcheck.json", function() {
@@ -3463,7 +3458,9 @@ function enviarSpotchecks(spotcheck_ids) {
 
                                         $("#enviando-spotcheck .lista-spotchecks-enviando li a[data-id=" + id_spotcheck_local + "]").find(".item-after").html("Enviando e-mails...");
 										
-										
+	
+	
+myApp.alert("id_spotcheck_local: "+id_spotcheck_local + ", id_spotcheck_remoto:" + id_spotcheck_remoto, "Teste1");
 										
                                         //Gera os relatórios e envia os e-mails
                                         $.ajax({
@@ -3519,7 +3516,7 @@ function enviarSpotchecks(spotcheck_ids) {
                                                     error_msg = "Erro desconhecido "+x.responseText+".";
                                                 }
 
-                                                myApp.alert("Erro 04B: Não foi possível realizar o envio de E-mails. "+error_msg, "O servidor de mensagens está ocupado.");
+                                                myApp.alert("Erro 04: Não foi possível realizar o envio de E-mails. "+error_msg, "O servidor de mensagens está ocupado.");
 
                                                 $("#enviando-spotcheck .lista-spotchecks-enviando a").each(function() {
                                                     if ($(this).find(".item-after").text() == "Enviando...") {

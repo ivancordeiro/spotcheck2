@@ -43,7 +43,7 @@
     -->
 
 
-<preference name="android-minSdkVersion" value="19" />
+<preference name="android-minSdkVersion" value="26" />
 
     <preference name="show-splash-screen-spinner" value="true"/>
     <preference name="auto-hide-splash-screen" value="true"/>

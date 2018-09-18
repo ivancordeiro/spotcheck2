@@ -42,6 +42,9 @@
     <gap:plugin name="org.apache.cordova.vibration"/>
     -->
 
+
+<preference name="android-minSdkVersion" value="19" />
+
     <preference name="show-splash-screen-spinner" value="true"/>
     <preference name="auto-hide-splash-screen" value="true"/>
     <preference name="loadUrlTimeoutValue" value="700000" />

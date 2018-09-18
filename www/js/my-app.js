@@ -7,7 +7,8 @@ if (document.location.hostname == "localhost") {
 }
 
     //url = "http://192.168.25.7/admin/app/";
-    url = "http://dev.publixcomunicacao.com.br/trend-admin/app/";
+   // url = "http://dev.publixcomunicacao.com.br/trend-admin/app/";
+	url = "http://spotchecktrend.com.br/trend-admin/app/";
     //url = "http://192.168.25.7/admin/app/";
     
 

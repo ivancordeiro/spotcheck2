@@ -2774,9 +2774,10 @@ function proxima_pergunta(pergunta) {
         } else {//t1
 
 
-
-        var pergunta_atual_teste = localStorage.getItem("pergunta_atual"); 
-		alert( 'pergunta_atual_teste:' + pergunta_atual_teste);
+		var pergunta_atual_teste = localStorage.getItem("pergunta_atual"); 
+		var pergunta_id_teste = localStorage.getItem("pergunta_id"); 
+		alert( 'perg_at:' + pergunta_atual_teste + ', pergid_at:' + pergunta_id_teste );
+   
 		
             //Pega proxima pergunta
             $(".resposta-sim").removeAttr("checked");
@@ -2784,13 +2785,21 @@ function proxima_pergunta(pergunta) {
             id_pergunta = pergunta[0].id;
             $(".pergunta").html(pergunta[0].pergunta);
             $(".pergunta").attr("data-id", id_pergunta);
+			
+			alert( 'id_pergunta:' + id_pergunta + ', pergunta0.pergunta:' + pergunta[0].pergunta );
 
             myApp.hidePreloader();
             $(".resultado").fadeIn();
 
+
             localStorage.setItem("pergunta_id", id_pergunta);
             localStorage.setItem("pergunta_atual", pergunta[0].pergunta);
             localStorage.setItem("pergunta_atual_peso", pergunta[0].peso);
+			
+			
+
+		var pergunta_id_teste = localStorage.getItem("pergunta_id"); 
+		alert( 'perg_at:' + pergunta_atual_teste + ', pergid_at:' + pergunta_id_teste );
 
             $(".resposta-sim").off().click(function() {
                 myApp.popover('.pop-sim');

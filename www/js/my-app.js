@@ -2685,6 +2685,9 @@ function colorirDisabled() {
 
 
 function proxima_pergunta(pergunta) {
+	
+	alert('pergunta:' + pergunta);
+	
     var id_spotcheck = localStorage.getItem('spotcheck_id');
 
     //Verifica as respostas salvas para saber qual a próxima
@@ -2693,6 +2696,11 @@ function proxima_pergunta(pergunta) {
 			alert('so i:' + i);
 			
             for (var j = 0; j < resposta.length; j++) {
+				
+				if( j < 5 || ( j > 50 && j < 55 ) ){
+				alert('so j:' + j);
+				}
+				
                 if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {
                     //Retira as perguntas que já foram respondidas
                     pergunta.splice(i, 1);

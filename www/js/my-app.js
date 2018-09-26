@@ -2661,6 +2661,12 @@ function apagar_tudo() {
     }); //Fim escrever
 }
 
+
+
+
+
+
+
 function colorirDisabled() {
 
     $("select").each(function() {
@@ -2672,6 +2678,11 @@ function colorirDisabled() {
         }
     });
 }
+
+
+
+
+
 
 function proxima_pergunta(pergunta) {
     var id_spotcheck = localStorage.getItem('spotcheck_id');
@@ -2690,7 +2701,7 @@ function proxima_pergunta(pergunta) {
         var total = $(".total_perguntas").text();
         $(".pergunta_atual").text((total - pergunta.length) + 1);
 
-        if (pergunta.length == 0) {
+        if (pergunta.length == 0) {//t1
             //myApp.showPreloader("Aguarde");
             //Acabou o questionário
 
@@ -2751,47 +2762,22 @@ function proxima_pergunta(pergunta) {
 
             });
 
-            /*
-            $.ajax({
-               url: url+'php/getResultados.php',
-               type: 'POST',
-               data: { id_spotcheck:id_spotcheck }
-            }).done(function(data) {
+           
+		   
+		   
+		   
+		   
+		   
+		   
 
-                $(".resultado").html(data);
-                $(".resultado").fadeIn();
-                myApp.hidePreloader();
 
-                $(".navbar-inner .left").html('<a href="selecionar-spotcheck.html" class="link icon-only"><i class="icon icon-back"></i></a>');
+        } else {//t1
 
-                $(".ver-resposta").click(function() {
-                    id_resposta = $(this).attr('resposta-id');
-                    localStorage.setItem("resposta_id",id_resposta);
 
-                    mainView.router.loadPage('ver-resposta.html');
-                });
 
-                var fts = [];
-                fts.push(url+"img/graf1.jpg");
-                fts.push(url+"img/graf2.jpg");
-                fts.push(url+"img/graf3.jpg");
-                fts.push(url+"img/graf4.jpg");
-                var fotos = myApp.photoBrowser({
-                    photos : fts
-                });
-
-                $('.grafs img').each(function(index) {
-                    $(this).off()
-                    $(this).click(function() {
-                        fotos.open(index);
-                    });
-                });
-
-            });
-            */
-
-        } else {
-
+        var pergunta_atual_teste = localStorage.getItem("pergunta_atual"); 
+		alert( 'pergunta_atual_teste:' + pergunta_atual_teste);
+		
             //Pega proxima pergunta
             $(".resposta-sim").removeAttr("checked");
 
@@ -2923,7 +2909,16 @@ function proxima_pergunta(pergunta) {
             });
         }
     });
-}
+	
+	
+	
+}//t1
+
+
+
+
+
+
 
 // Generate dynamic page
 var dynamicPageIndex = 0;

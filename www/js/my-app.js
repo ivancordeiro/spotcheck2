@@ -2694,6 +2694,8 @@ function proxima_pergunta(pergunta) {
                 if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {
                     //Retira as perguntas que já foram respondidas
                     pergunta.splice(i, 1);
+					
+					alert('i:' + i + ', j:' +  j);
                 }
             }
         }

@@ -2690,6 +2690,8 @@ function proxima_pergunta(pergunta) {
     //Verifica as respostas salvas para saber qual a próxima
     lerArquivo("resposta.json", function(resposta) {
         for (var i = 0; i < pergunta.length; i++) {
+			alert('so i:' + i);
+			
             for (var j = 0; j < resposta.length; j++) {
                 if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {
                     //Retira as perguntas que já foram respondidas

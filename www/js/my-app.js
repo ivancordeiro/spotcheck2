@@ -2724,7 +2724,7 @@ function proxima_pergunta(pergunta) {
 				
                 if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {
                     //Retira as perguntas que já foram respondidas
-					if( voltar_pergunta = 0){
+					if( voltar_pergunta == 0){
                     pergunta.splice(i, 1);
 					} else {
                     pergunta.splice(i - 1, 1);

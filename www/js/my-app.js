@@ -2882,6 +2882,18 @@ obj_guardar['pergunta'] = pergunta ;
                     });
                 });
             });
+			
+			
+			$(".bt_voltar_new_pergunta").off().click(function() {
+															  
+			 voltar_pergunta = 1;
+
+                    $(".resultado").fadeOut(function() {
+                        proxima_pergunta(pergunta);
+                    });
+              
+            });
+			
 
             $(".sim-foto").off().click(function() {
                 myApp.closeModal('.pop-sim');

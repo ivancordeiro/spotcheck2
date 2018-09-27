@@ -2684,7 +2684,7 @@ function colorirDisabled() {
 
 
 
-
+/*
 	function voltar_pergunta_func(){
 		
 		 lerArquivo("pergunta_em_uso.json", function(pergunta) {
@@ -2698,10 +2698,24 @@ function colorirDisabled() {
 	
 	}
 	
-
+*/
 
 
 function proxima_pergunta(pergunta) {
+	
+	
+	
+		function voltar_pergunta_func(){
+		
+									  
+	 voltar_pergunta = 1;
+	 alert('teste: vlprg:' + voltar_pergunta );
+	 proxima_pergunta(pergunta);
+	 
+
+	
+	
+	}
 	
 	
 

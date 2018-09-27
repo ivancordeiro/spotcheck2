@@ -2831,11 +2831,11 @@ function proxima_pergunta(pergunta) {
                     peso: pergunta_atual_peso
                 }
 
-                escreverArquivo("resposta.json", JSON.stringify(resp) + ",", 0, function() {
+                /////escreverArquivo("resposta.json", JSON.stringify(resp) + ",", 0, function() {
                     $(".resultado").fadeOut(function() {
                         proxima_pergunta(pergunta);
                     });
-                });
+                /////});
             });
 
             $(".sim-foto").off().click(function() {

@@ -910,66 +910,6 @@ if (document.location.hostname == "localhost") {
 	
 	
 	
-	
-	
-	
-	
-	
-	$(".bt_voltar_new_pergunta3").off().click(function() {
-		// mainView.router.loadPage('spotcheck-justificar.html');														  
-
-    });	
-	
-	
-	
-	
-
-/*
-    myApp.onPageInit('spotcheck-justificar', function(page) {
-        $("input[name=justificativa]").removeAttr("checked");
-
-        var nome_gerencia_prog = localStorage.getItem('prog_gerencia');
-        var nome_setor_prog = localStorage.getItem('prog_setor');
-        var nome_atividade_prog = localStorage.getItem('prog_atividade');
-        var nome_tema_prog = localStorage.getItem('prog_tema');
-
-        $(".detalhes-programacao").html("<strong>GERÊNCIA: </strong>"+nome_gerencia_prog+"<br /><strong>SETOR: </strong>"+nome_setor_prog+"<br /><strong>ATIVIDADE: </strong>"+nome_atividade_prog+"<br /><strong>TEMA: </strong>"+nome_tema_prog+"<br /><a class='button button-fill button-small button-raised preparar-spotcheck'>Preparar Spotcheck</a>");
-
-        $(".btn-justificar").hide();
-
-        $(".preparar-spotcheck").off().click(function() {
-            var id_gerencia_prog = localStorage.getItem('prog_gerencia_id');
-            var id_setor_prog = localStorage.getItem('prog_setor_id');
-            var id_atividade_prog = localStorage.getItem('prog_atividade_id');
-            var id_tema_prog = localStorage.getItem('prog_tema_id');
-
-            localStorage.setItem("preparar_gerencia_id",id_gerencia_prog);
-            localStorage.setItem("preparar_setor_id",id_setor_prog);
-            localStorage.setItem("preparar_atividade_id",id_atividade_prog);
-            localStorage.setItem("preparar_tema_id",id_tema_prog);
-
-            localStorage.removeItem("prog_gerencia_id");
-            localStorage.removeItem("prog_setor_id");
-            localStorage.removeItem("prog_atividade_id");
-            localStorage.removeItem("prog_tema_id");
-
-            localStorage.removeItem("spotcheck_id");
-
-            mainView.router.loadPage('spotcheck-inicio.html');
-
-        })
-
-
-    });
-	
-	*/
-	
-	
-	
-	
-	
-	
-	
 
     myApp.onPageInit('enviando-spotcheck', function(page) {
 

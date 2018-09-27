@@ -2691,6 +2691,8 @@ pergunta : ""
 
 	function voltar_pergunta_func(){
 		
+		alert('testando' + obj_guardar.pergunta);
+		
 	/*
 	lerArquivo("pergunta_em_uso.json", function(pergunta2) {
 											  
@@ -2703,7 +2705,7 @@ pergunta : ""
 	*/
 	
 	voltar_pergunta = 1;
-	proxima_pergunta( obj_guardar['pergunta'] );
+	proxima_pergunta( obj_guardar.pergunta );
 	
 	}
 	
@@ -2716,7 +2718,8 @@ function proxima_pergunta(pergunta) {
 obj_guardar['pergunta'] = pergunta ;
 	
 
-	//alert('pergunta:' + pergunta);
+	//
+	alert('pergunta:' + pergunta);
 	
     var id_spotcheck = localStorage.getItem('spotcheck_id');
 

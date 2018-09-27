@@ -10,7 +10,8 @@ if (document.location.hostname == "localhost") {
    // url = "http://dev.publixcomunicacao.com.br/trend-admin/app/";
 	url = "http://spotchecktrend.com.br/trend-admin/app/";
     //url = "http://192.168.25.7/admin/app/"; 
-    
+ 
+ voltar_pergunta = 0;
 
     $.ajaxSetup({
         cache: false
@@ -39,6 +40,11 @@ if (document.location.hostname == "localhost") {
         navigator.splashscreen.hide();
     }, 2000);
     */
+	
+	function voltar_pergunta_func(){
+	 voltar_pergunta = 1;
+	 proxima_pergunta(pergunta);
+	}
 
     function onBackKeyDown() {
         $$(".back").click();
@@ -2686,26 +2692,31 @@ function colorirDisabled() {
 
 function proxima_pergunta(pergunta) {
 	
-	alert('pergunta:' + pergunta);
+	//alert('pergunta:' + pergunta);
 	
     var id_spotcheck = localStorage.getItem('spotcheck_id');
 
     //Verifica as respostas salvas para saber qual a próxima
     lerArquivo("resposta.json", function(resposta) {
         for (var i = 0; i < pergunta.length; i++) {
-			alert('so i:' + i);
+			//alert('so i:' + i);
 			
             for (var j = 0; j < resposta.length; j++) {
 				
-				if( j < 5 || ( j > 50 && j < 55 ) ){
-				alert('so j:' + j);
-				}
+				//if( j < 5 || ( j > 50 && j < 55 ) ){
+				//alert('so j:' + j);
+				//}
 				
                 if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {
                     //Retira as perguntas que já foram respondidas
+					if( voltar_pergunta = 0){
                     pergunta.splice(i, 1);
+					} else {
+                    pergunta.splice(i - 1, 1);
+					voltar_pergunta = 0;
+					}
 					
-					alert('i:' + i + ', j:' +  j);
+					//alert('i:' + i + ', j:' +  j);
                 }
             }
         }

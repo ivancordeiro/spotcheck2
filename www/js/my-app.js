@@ -2684,10 +2684,15 @@ function colorirDisabled() {
 
 
 
+obj_guardar = {
+pergunta : ""
+};
+
 
 	function voltar_pergunta_func(){
 		
-		 lerArquivo("pergunta_em_uso.json", function(pergunta2) {
+	/*
+	lerArquivo("pergunta_em_uso.json", function(pergunta2) {
 											  
 			 voltar_pergunta = 1;
 	 alert('teste: vlprg:' + voltar_pergunta );
@@ -2695,6 +2700,10 @@ function colorirDisabled() {
 	 
 		});
 	
+	*/
+	
+	voltar_pergunta = 1;
+	proxima_pergunta( obj_guardar['pergunta'] );
 	
 	}
 	
@@ -2704,7 +2713,7 @@ function colorirDisabled() {
 function proxima_pergunta(pergunta) {
 	
 	
-
+obj_guardar['pergunta'] = pergunta ;
 	
 
 	//alert('pergunta:' + pergunta);

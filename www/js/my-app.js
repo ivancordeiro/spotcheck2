@@ -2718,7 +2718,9 @@ function proxima_pergunta(pergunta) {
 //obj_guardar['pergunta'] = pergunta ;
 	
 
-	// alert('pergunta:' + pergunta);
+	alert('pergunta:' + pergunta);
+	alert('resposta length:' + resposta.length);
+	alert('pergunta length:' + pergunta.length);
 	
     var id_spotcheck = localStorage.getItem('spotcheck_id');
 
@@ -2755,10 +2757,10 @@ function proxima_pergunta(pergunta) {
           
 					} else {
 						
-						voltar_pergunta = 0;
+						//voltar_pergunta = 0;
 						
-						if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i - 2].id == resposta[j - 2].id_pergunta) {   
-						pergunta.splice(i - 2, 1);
+						if (id_spotcheck == resposta[j - 2].id_spotcheck && pergunta[i - 2].id == resposta[j - 2].id_pergunta) {   
+						pergunta.splice(i - 2, 3);
 						}
 					
 					}
@@ -2768,7 +2770,19 @@ function proxima_pergunta(pergunta) {
         }
 
         var total = $(".total_perguntas").text();
-        $(".pergunta_atual").text((total - pergunta.length) + 1);
+        //$(".pergunta_atual").text((total - pergunta.length) + 1);
+		
+		
+				
+					if( voltar_pergunta == 0){						
+						
+			$(".pergunta_atual").text((total - pergunta.length) + 1);
+          
+					} else {
+						
+		$(".pergunta_atual").text((total - pergunta.length) - 1);
+					
+					}
 
         if (pergunta.length == 0) {//t1
             //myApp.showPreloader("Aguarde");

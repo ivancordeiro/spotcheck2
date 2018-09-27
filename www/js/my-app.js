@@ -918,7 +918,7 @@ if (document.location.hostname == "localhost") {
 	$(".bt_voltar_new_pergunta3").off().click(function() {
 		 mainView.router.loadPage('spotcheck-justificar.html');														  
 
-            });	
+    });	
 	
 	
 	

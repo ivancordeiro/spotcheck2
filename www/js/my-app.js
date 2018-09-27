@@ -2718,9 +2718,9 @@ function proxima_pergunta(pergunta) {
 //obj_guardar['pergunta'] = pergunta ;
 	
 
-	alert('pergunta:' + pergunta);
-	alert('resposta length:' + resposta.length);
-	alert('pergunta length:' + pergunta.length);
+	//alert('pergunta:' + pergunta);
+	//alert('resposta length:' + resposta.length);
+	//alert('pergunta length:' + pergunta.length);
 	
     var id_spotcheck = localStorage.getItem('spotcheck_id');
 
@@ -2759,7 +2759,7 @@ function proxima_pergunta(pergunta) {
 						
 						//voltar_pergunta = 0;
 						
-						if (id_spotcheck == resposta[j - 2].id_spotcheck && pergunta[i - 2].id == resposta[j - 2].id_pergunta) {   
+						if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {    
 						pergunta.splice(i - 2, 3);
 						}
 					

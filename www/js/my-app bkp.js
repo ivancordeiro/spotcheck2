@@ -10,7 +10,8 @@ if (document.location.hostname == "localhost") {
    // url = "http://dev.publixcomunicacao.com.br/trend-admin/app/";
 	url = "http://spotchecktrend.com.br/trend-admin/app/";
     //url = "http://192.168.25.7/admin/app/"; 
-    
+ 
+ voltar_pergunta = 0;
 
     $.ajaxSetup({
         cache: false
@@ -39,6 +40,8 @@ if (document.location.hostname == "localhost") {
         navigator.splashscreen.hide();
     }, 2000);
     */
+	
+
 
     function onBackKeyDown() {
         $$(".back").click();
@@ -806,6 +809,14 @@ if (document.location.hostname == "localhost") {
         });
         */
     });
+	
+	
+	
+	
+	
+	
+	
+	
 
     myApp.onPageInit('spotcheck-justificar', function(page) {
         $("input[name=justificativa]").removeAttr("checked");
@@ -881,6 +892,15 @@ if (document.location.hostname == "localhost") {
         });
 
     });
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
     myApp.onPageInit('enviando-spotcheck', function(page) {
 
@@ -2661,6 +2681,12 @@ function apagar_tudo() {
     }); //Fim escrever
 }
 
+
+
+
+
+
+
 function colorirDisabled() {
 
     $("select").each(function() {
@@ -2673,24 +2699,109 @@ function colorirDisabled() {
     });
 }
 
+
+
+//obj_guardar = {
+//pergunta : ""
+//};
+
+
+	//function voltar_pergunta_func(){
+		
+		//alert('testando' + obj_guardar.pergunta);
+		
+	/*
+	lerArquivo("pergunta_em_uso.json", function(pergunta2) {
+											  
+			 voltar_pergunta = 1;
+	 alert('teste: vlprg:' + voltar_pergunta );
+	 proxima_pergunta(pergunta2);
+	 
+		});
+	
+	*/
+	
+	//voltar_pergunta = 1;
+	//proxima_pergunta( obj_guardar.pergunta );
+	
+	//}
+	
+
+
+
 function proxima_pergunta(pergunta) {
+	
+	
+//obj_guardar['pergunta'] = pergunta ;
+	
+
+	//alert('pergunta:' + pergunta);
+	//alert('resposta length:' + resposta.length);
+	//alert('pergunta length:' + pergunta.length);
+	
     var id_spotcheck = localStorage.getItem('spotcheck_id');
 
     //Verifica as respostas salvas para saber qual a próxima
     lerArquivo("resposta.json", function(resposta) {
         for (var i = 0; i < pergunta.length; i++) {
+			//alert('so i:' + i);
+			
             for (var j = 0; j < resposta.length; j++) {
+				
+				//if( j < 5 || ( j > 50 && j < 55 ) ){
+				//alert('so j:' + j);
+				//}
+				
+				/*
                 if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {
                     //Retira as perguntas que já foram respondidas
+					////////////if( voltar_pergunta == 0){
                     pergunta.splice(i, 1);
-                }
+					////////////} else {
+                    ////////////pergunta.splice(i - 1, 1);
+					////////////////voltar_pergunta = 0;
+					/////////////////}
+					
+					//alert('i:' + i + ', j:' +  j);
+                }*/
+				
+				
+					if( voltar_pergunta == 0){						
+						
+						if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {   
+						pergunta.splice(i, 1);
+						}
+          
+					} else {
+						
+						//voltar_pergunta = 0;
+						
+						if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {    
+						pergunta.splice(i - 2, 3);
+						}
+					
+					}
+				
+				
             }
         }
 
         var total = $(".total_perguntas").text();
-        $(".pergunta_atual").text((total - pergunta.length) + 1);
+        //$(".pergunta_atual").text((total - pergunta.length) + 1);
+		
+		
+				
+					if( voltar_pergunta == 0){						
+						
+			$(".pergunta_atual").text((total - pergunta.length) + 1);
+          
+					} else {
+						
+		$(".pergunta_atual").text((total - pergunta.length) - 1);
+					
+					}
 
-        if (pergunta.length == 0) {
+        if (pergunta.length == 0) {//t1
             //myApp.showPreloader("Aguarde");
             //Acabou o questionário
 
@@ -2751,60 +2862,44 @@ function proxima_pergunta(pergunta) {
 
             });
 
-            /*
-            $.ajax({
-               url: url+'php/getResultados.php',
-               type: 'POST',
-               data: { id_spotcheck:id_spotcheck }
-            }).done(function(data) {
+           
+		   
+		   
+		   
+		   
+		   
+		   
 
-                $(".resultado").html(data);
-                $(".resultado").fadeIn();
-                myApp.hidePreloader();
 
-                $(".navbar-inner .left").html('<a href="selecionar-spotcheck.html" class="link icon-only"><i class="icon icon-back"></i></a>');
+        } else {//t1
 
-                $(".ver-resposta").click(function() {
-                    id_resposta = $(this).attr('resposta-id');
-                    localStorage.setItem("resposta_id",id_resposta);
 
-                    mainView.router.loadPage('ver-resposta.html');
-                });
-
-                var fts = [];
-                fts.push(url+"img/graf1.jpg");
-                fts.push(url+"img/graf2.jpg");
-                fts.push(url+"img/graf3.jpg");
-                fts.push(url+"img/graf4.jpg");
-                var fotos = myApp.photoBrowser({
-                    photos : fts
-                });
-
-                $('.grafs img').each(function(index) {
-                    $(this).off()
-                    $(this).click(function() {
-                        fotos.open(index);
-                    });
-                });
-
-            });
-            */
-
-        } else {
-
+		//var pergunta_atual_teste = localStorage.getItem("pergunta_atual"); 
+		//var pergunta_id_teste = localStorage.getItem("pergunta_id"); 
+		//alert( 'perg_at:' + pergunta_atual_teste + ', pergid_at:' + pergunta_id_teste );
+   
+		
             //Pega proxima pergunta
             $(".resposta-sim").removeAttr("checked");
 
             id_pergunta = pergunta[0].id;
             $(".pergunta").html(pergunta[0].pergunta);
             $(".pergunta").attr("data-id", id_pergunta);
+			
+			//alert( 'id_pergunta:' + id_pergunta + ', pergunta0.pergunta:' + pergunta[0].pergunta );
 
             myApp.hidePreloader();
             $(".resultado").fadeIn();
 
+
             localStorage.setItem("pergunta_id", id_pergunta);
             localStorage.setItem("pergunta_atual", pergunta[0].pergunta);
             localStorage.setItem("pergunta_atual_peso", pergunta[0].peso);
+			
+			
+
+		//var pergunta_id_teste = localStorage.getItem("pergunta_id"); 
+		//alert( 'perg_at:' + pergunta_atual_teste + ', pergid_at:' + pergunta_id_teste );
 
             $(".resposta-sim").off().click(function() {
                 myApp.popover('.pop-sim');
@@ -2837,6 +2932,18 @@ function proxima_pergunta(pergunta) {
                     });
                 });
             });
+			
+			
+			$(".bt_voltar_new_pergunta").off().click(function() {
+															  
+			 voltar_pergunta = 1;
+
+                    $(".resultado").fadeOut(function() {
+                        proxima_pergunta(pergunta);
+                    });
+              
+            });
+			
 
             $(".sim-foto").off().click(function() {
                 myApp.closeModal('.pop-sim');
@@ -2923,7 +3030,16 @@ function proxima_pergunta(pergunta) {
             });
         }
     });
-}
+	
+	
+	
+}//t1
+
+
+
+
+
+
 
 // Generate dynamic page
 var dynamicPageIndex = 0;

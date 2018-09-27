@@ -2673,6 +2673,8 @@ function colorirDisabled() {
     });
 }
 
+voltar_pergunta = 0;
+
 function proxima_pergunta(pergunta) {
     var id_spotcheck = localStorage.getItem('spotcheck_id');
 
@@ -2682,13 +2684,38 @@ function proxima_pergunta(pergunta) {
             for (var j = 0; j < resposta.length; j++) {
                 if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {
                     //Retira as perguntas que já foram respondidas
-                    pergunta.splice(i, 1);
+                    //pergunta.splice(i, 1);
+					
+					if( voltar_pergunta == 0){
+					pergunta.splice(i, 1);	
+					} else {
+					pergunta.splice(i - 1, 2);	
+					}
                 }
             }
         }
 
         var total = $(".total_perguntas").text();
-        $(".pergunta_atual").text((total - pergunta.length) + 1);
+        //$(".pergunta_atual").text((total - pergunta.length) + 1);
+		
+					if( voltar_pergunta == 0){
+					$(".pergunta_atual").text((total - pergunta.length) + 1);	
+					} else {
+					$(".pergunta_atual").text((total - pergunta.length) - 1);	
+					}
+		
+			$(".bt_voltar_new_pergunta").off().click(function() {
+															  
+			 voltar_pergunta = 1;
+
+                    $(".resultado").fadeOut(function() {
+                        proxima_pergunta(pergunta);
+                    });
+              
+            });
+			
+			
+			
 
         if (pergunta.length == 0) {
             //myApp.showPreloader("Aguarde");
@@ -2831,11 +2858,11 @@ function proxima_pergunta(pergunta) {
                     peso: pergunta_atual_peso
                 }
 
-                /////escreverArquivo("resposta.json", JSON.stringify(resp) + ",", 0, function() {
+                escreverArquivo("resposta.json", JSON.stringify(resp) + ",", 0, function() {
                     $(".resultado").fadeOut(function() {
                         proxima_pergunta(pergunta);
                     });
-                /////});
+                });
             });
 
             $(".sim-foto").off().click(function() {

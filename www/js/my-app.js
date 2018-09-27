@@ -41,10 +41,7 @@ if (document.location.hostname == "localhost") {
     }, 2000);
     */
 	
-	function voltar_pergunta_func(){
-	 voltar_pergunta = 1;
-	 proxima_pergunta(pergunta);
-	}
+
 
     function onBackKeyDown() {
         $$(".back").click();
@@ -2688,10 +2685,26 @@ function colorirDisabled() {
 
 
 
+	function voltar_pergunta_func(){
+		
+		 lerArquivo("pergunta_em_uso.json", function(pergunta) {
+											  
+			 voltar_pergunta = 1;
+	 alert('teste: vlprg:' + voltar_pergunta );
+	 proxima_pergunta(pergunta);
+	 
+		}
+	
+
+	}
+	
+
 
 
 function proxima_pergunta(pergunta) {
 	
+	
+
 	//alert('pergunta:' + pergunta);
 	
     var id_spotcheck = localStorage.getItem('spotcheck_id');

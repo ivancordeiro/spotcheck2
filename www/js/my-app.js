@@ -901,15 +901,6 @@ if (document.location.hostname == "localhost") {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
     myApp.onPageInit('enviando-spotcheck', function(page) {
 

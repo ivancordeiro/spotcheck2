@@ -809,6 +809,14 @@ if (document.location.hostname == "localhost") {
         });
         */
     });
+	
+	
+	
+	
+	
+	
+	
+	
 
     myApp.onPageInit('spotcheck-justificar', function(page) {
         $("input[name=justificativa]").removeAttr("checked");
@@ -884,6 +892,84 @@ if (document.location.hostname == "localhost") {
         });
 
     });
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	$(".bt_voltar_new_pergunta3").off().click(function() {
+		 mainView.router.loadPage('spotcheck-justificar.html');														  
+
+            });	
+	
+	
+	
+	
+
+/*
+    myApp.onPageInit('spotcheck-justificar', function(page) {
+        $("input[name=justificativa]").removeAttr("checked");
+
+        var nome_gerencia_prog = localStorage.getItem('prog_gerencia');
+        var nome_setor_prog = localStorage.getItem('prog_setor');
+        var nome_atividade_prog = localStorage.getItem('prog_atividade');
+        var nome_tema_prog = localStorage.getItem('prog_tema');
+
+        $(".detalhes-programacao").html("<strong>GERÊNCIA: </strong>"+nome_gerencia_prog+"<br /><strong>SETOR: </strong>"+nome_setor_prog+"<br /><strong>ATIVIDADE: </strong>"+nome_atividade_prog+"<br /><strong>TEMA: </strong>"+nome_tema_prog+"<br /><a class='button button-fill button-small button-raised preparar-spotcheck'>Preparar Spotcheck</a>");
+
+        $(".btn-justificar").hide();
+
+        $(".preparar-spotcheck").off().click(function() {
+            var id_gerencia_prog = localStorage.getItem('prog_gerencia_id');
+            var id_setor_prog = localStorage.getItem('prog_setor_id');
+            var id_atividade_prog = localStorage.getItem('prog_atividade_id');
+            var id_tema_prog = localStorage.getItem('prog_tema_id');
+
+            localStorage.setItem("preparar_gerencia_id",id_gerencia_prog);
+            localStorage.setItem("preparar_setor_id",id_setor_prog);
+            localStorage.setItem("preparar_atividade_id",id_atividade_prog);
+            localStorage.setItem("preparar_tema_id",id_tema_prog);
+
+            localStorage.removeItem("prog_gerencia_id");
+            localStorage.removeItem("prog_setor_id");
+            localStorage.removeItem("prog_atividade_id");
+            localStorage.removeItem("prog_tema_id");
+
+            localStorage.removeItem("spotcheck_id");
+
+            mainView.router.loadPage('spotcheck-inicio.html');
+
+        })
+
+
+    });
+	
+	*/
+	
+	
+	
+	
+	
+	
+	
 
     myApp.onPageInit('enviando-spotcheck', function(page) {
 
@@ -1694,99 +1780,6 @@ if (document.location.hostname == "localhost") {
 
         });
     });
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	$(".bt_voltar_new_pergunta2").click(function() {
-
-                var gerencia = $("select[name=gerencia]").val();
-                var setor = $("select[name=setor]").val();
-                var frente = $("select[name=frente]").val();
-                var local = $("select[name=local]").val();
-                var atividade = $("select[name=atividade]").val();
-                var tema = $("select[name=tema]").val();
-                var responsavel = $("select[name=responsavel]").val();
-                var mao = $("select[name=mao]").val();
-                var obra_id = localStorage.getItem('obra_id');
-                var spotcheck_id = localStorage.getItem('spotcheck_id');
-                var programacao_id = localStorage.getItem('programacao_id');
-                var nome = $("select[name=tema] option:selected").text();
-                var contratada = $("select[name=contratada]").val();
-                //Verifica se há um spotcheck com este id (spotcheck_id)
-                if (spotcheck_id != null) {
-                    localStorage.setItem('spotcheck_id', spotcheck_id);
-                    mainView.router.loadPage('spotcheck-pergunta.html');
-                } else {
-
-                    //O id não existe (spotcheck não existe)
-
-                    var data_atual = new Date();
-                    var mes = data_atual.getMonth() + 1;
-                    if (mes > 12) {
-                        mes = 1;
-                    }
-                    data_atual = data_atual.getFullYear() + "-" + zero_esq(mes) + "-" + zero_esq(data_atual.getDate()) + " " + zero_esq(data_atual.getHours()) + ":" + zero_esq(data_atual.getMinutes()) + ":" + zero_esq(data_atual.getSeconds());
-
-                    //FAZ LEITURA AQUI
-                    lerArquivo("spotcheck.json", function(data) {
-                        var spotcheck = data;
-
-                        //if(spotcheck != "") { spotcheck = JSON.parse("["+spotcheck.slice(0,-1)+"]"); }
-                        var user = JSON.parse("[" + sessionStorage.getItem("user") + "]");
-                        var id_tecnico = user[0].id;
-
-                        spotcheck_id = Number(spotcheck.length) + Number(1);
-
-                        var dados = {
-                            nome: nome,
-                            id: spotcheck_id,
-                            finalizado: '0',
-                            entregue: '0',
-                            data: data_atual,
-                            id_gerencia: gerencia,
-                            id_setor: setor,
-                            id_frente: frente,
-                            id_local: local,
-                            id_atividade: atividade,
-                            id_tema: tema,
-                            id_responsavel: responsavel,
-                            mao: mao,
-                            id_obra: obra_id,
-                            id_tecnico: id_tecnico,
-                            id_programacao: programacao_id,
-                            id_terceiro: contratada
-                        }
-
-                        spotcheck.push(dados);
-
-                        //ESCREVE AQUI
-                        escreverArquivo("spotcheck.json", JSON.stringify(dados) + ",", 0, function() {
-                            localStorage.setItem('spotcheck_id', spotcheck_id);
-                            mainView.router.loadPage('spotcheck-pergunta.html');
-                        });
-
-                    });
-
-
-                }
-
-
-
-        });
-    });
-	
-	
-	
 
     myApp.onPageInit('spotcheck-pergunta', function(page) {
 

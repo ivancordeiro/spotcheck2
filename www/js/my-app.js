@@ -2684,39 +2684,27 @@ function colorirDisabled() {
 
 
 
-/*
+
 	function voltar_pergunta_func(){
 		
-		 lerArquivo("pergunta_em_uso.json", function(pergunta) {
+		 lerArquivo("pergunta_em_uso.json", function(pergunta2) {
 											  
 			 voltar_pergunta = 1;
 	 alert('teste: vlprg:' + voltar_pergunta );
-	 proxima_pergunta(pergunta);
+	 proxima_pergunta(pergunta2);
 	 
 		});
 	
 	
 	}
 	
-*/
+
 
 
 function proxima_pergunta(pergunta) {
 	
 	
-	
-		function voltar_pergunta_func(){
-		
-									  
-	 voltar_pergunta = 1;
-	 alert('teste: vlprg:' + voltar_pergunta );
-	 proxima_pergunta(pergunta);
-	 
 
-	
-	
-	}
-	
 	
 
 	//alert('pergunta:' + pergunta);

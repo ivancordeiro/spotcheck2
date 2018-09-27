@@ -2684,14 +2684,14 @@ function colorirDisabled() {
 
 
 
-obj_guardar = {
-pergunta : ""
-};
+//obj_guardar = {
+//pergunta : ""
+//};
 
 
-	function voltar_pergunta_func(){
+	//function voltar_pergunta_func(){
 		
-		alert('testando' + obj_guardar.pergunta);
+		//alert('testando' + obj_guardar.pergunta);
 		
 	/*
 	lerArquivo("pergunta_em_uso.json", function(pergunta2) {
@@ -2704,10 +2704,10 @@ pergunta : ""
 	
 	*/
 	
-	voltar_pergunta = 1;
-	proxima_pergunta( obj_guardar.pergunta );
+	//voltar_pergunta = 1;
+	//proxima_pergunta( obj_guardar.pergunta );
 	
-	}
+	//}
 	
 
 
@@ -2715,11 +2715,10 @@ pergunta : ""
 function proxima_pergunta(pergunta) {
 	
 	
-obj_guardar['pergunta'] = pergunta ;
+//obj_guardar['pergunta'] = pergunta ;
 	
 
-	//
-	alert('pergunta:' + pergunta);
+	// alert('pergunta:' + pergunta);
 	
     var id_spotcheck = localStorage.getItem('spotcheck_id');
 
@@ -2734,17 +2733,37 @@ obj_guardar['pergunta'] = pergunta ;
 				//alert('so j:' + j);
 				//}
 				
+				/*
                 if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {
                     //Retira as perguntas que já foram respondidas
-					if( voltar_pergunta == 0){
+					////////////if( voltar_pergunta == 0){
                     pergunta.splice(i, 1);
-					} else {
-                    pergunta.splice(i - 1, 1);
-					voltar_pergunta = 0;
-					}
+					////////////} else {
+                    ////////////pergunta.splice(i - 1, 1);
+					////////////////voltar_pergunta = 0;
+					/////////////////}
 					
 					//alert('i:' + i + ', j:' +  j);
-                }
+                }*/
+				
+				
+					if( voltar_pergunta == 0){						
+						
+						if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {   
+						pergunta.splice(i, 1);
+						}
+          
+					} else {
+						
+						voltar_pergunta = 0;
+						
+						if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i - 2].id == resposta[j - 2].id_pergunta) {   
+						pergunta.splice(i - 2, 1);
+						}
+					
+					}
+				
+				
             }
         }
 
@@ -2824,8 +2843,8 @@ obj_guardar['pergunta'] = pergunta ;
         } else {//t1
 
 
-		var pergunta_atual_teste = localStorage.getItem("pergunta_atual"); 
-		var pergunta_id_teste = localStorage.getItem("pergunta_id"); 
+		//var pergunta_atual_teste = localStorage.getItem("pergunta_atual"); 
+		//var pergunta_id_teste = localStorage.getItem("pergunta_id"); 
 		//alert( 'perg_at:' + pergunta_atual_teste + ', pergid_at:' + pergunta_id_teste );
    
 		
@@ -2848,7 +2867,7 @@ obj_guardar['pergunta'] = pergunta ;
 			
 			
 
-		var pergunta_id_teste = localStorage.getItem("pergunta_id"); 
+		//var pergunta_id_teste = localStorage.getItem("pergunta_id"); 
 		//alert( 'perg_at:' + pergunta_atual_teste + ', pergid_at:' + pergunta_id_teste );
 
             $(".resposta-sim").off().click(function() {

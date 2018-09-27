@@ -2693,9 +2693,9 @@ function colorirDisabled() {
 	 alert('teste: vlprg:' + voltar_pergunta );
 	 proxima_pergunta(pergunta);
 	 
-		}
+		});
 	
-
+	
 	}
 	
 

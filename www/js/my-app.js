@@ -2681,19 +2681,26 @@ function proxima_pergunta(pergunta) {
     //Verifica as respostas salvas para saber qual a próxima
     lerArquivo("resposta.json", function(resposta) {
         for (var i = 0; i < pergunta.length; i++) {
+			alert('i:' + i);
             for (var j = 0; j < resposta.length; j++) {
                 if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {
                     //Retira as perguntas que já foram respondidas
                     //pergunta.splice(i, 1);
 					
 					if( voltar_pergunta == 0){
+					alert( 'voltar_pergunta == 0' );
 					pergunta.splice(i, 1);	
 					} else {
+					alert( 'voltar_pergunta == 1' );
 					pergunta.splice(i - 1, 2);	
 					}
                 }
             }
         }
+		
+		   for (var i = 0; i < pergunta.length; i++) {
+			alert('i2:' + i);
+		   }
 
         var total = $(".total_perguntas").text();
         //$(".pergunta_atual").text((total - pergunta.length) + 1);

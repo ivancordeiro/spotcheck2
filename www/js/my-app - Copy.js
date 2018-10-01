@@ -2689,8 +2689,7 @@ function proxima_pergunta(pergunta) {
 	
 	
 					if( voltar_pergunta == 1){
-					//
-					pergunta = 	pergunta_orig;
+					//pergunta = 	pergunta_orig;
 					} 
 	alert('vez: ' + vez  );
 	alert('voltar_pergunta: ' + voltar_pergunta  );
@@ -2710,11 +2709,10 @@ vez = vez + 1;
 					
 					//if( voltar_pergunta == 0){
 					//alert( 'voltar_pergunta == 0' );
-					//
-					pergunta.splice(i, 1);	
+					//pergunta.splice(i, 1);	
 					//} else {
 					//alert( 'voltar_pergunta == 1' );
-					//pergunta.splice(i - 1, 2);	
+					pergunta.splice(i - 1, 2);	
 					//}
                 }
             }

@@ -1705,7 +1705,6 @@ testao = {};
 
                 $(".total_perguntas").text(pergunta.length);
 				testao = pergunta;
-				id_tema2 = id_tema;
                 proxima_pergunta(pergunta);
             })
 
@@ -2882,7 +2881,7 @@ vez = vez + 1;
 
 
 
-            getManyById(item.id_tema2, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta2) {
+            getManyById(item.id_tema, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta2) {
      
 				testao2 = pergunta2;
 				

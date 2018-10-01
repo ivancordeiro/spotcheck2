@@ -2691,9 +2691,12 @@ function proxima_pergunta(pergunta) {
 					if( voltar_pergunta == 1){
 					//
 					pergunta = 	pergunta_orig;
+					alert('teste8 passou aqui '  );
 					} 
+					
 	alert('vez: ' + vez  );
 	alert('voltar_pergunta: ' + voltar_pergunta  );
+	
 	
 vez = vez + 1;
 
@@ -2869,6 +2872,12 @@ vez = vez + 1;
 				 alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   );
 			 }
 
+
+	 		alert('teste5orig - loop pergunta-orig: ' );
+			 for (var i = 0; i < pergunta_orig.length; i++) {
+				 alert( i + ',' + pergunta_orig[i].id   + ', ' + pergunta_orig[i].pergunta   );
+			 }
+			 
             myApp.hidePreloader();
             $(".resultado").fadeIn();
 

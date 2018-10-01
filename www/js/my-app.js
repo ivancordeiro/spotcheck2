@@ -11,6 +11,7 @@ if (document.location.hostname == "localhost") {
 	url = "http://spotchecktrend.com.br/trend-admin/app/";
     //url = "http://192.168.25.7/admin/app/"; 
     
+testao = {};
 
     $.ajaxSetup({
         cache: false
@@ -1703,6 +1704,7 @@ if (document.location.hostname == "localhost") {
                 var total_pergunta = pergunta.length;
 
                 $(".total_perguntas").text(pergunta.length);
+				testao = pergunta;
                 proxima_pergunta(pergunta);
             })
 
@@ -2678,13 +2680,14 @@ vez = 0;
 guardou_perg = 'n';
 pergunta_orig = {};
 
+
 function proxima_pergunta(pergunta) {
 	
 	alert('teste6 - ini func prox pergunta: '  );
 	
 	//alert('teste7 - pergunta: ' + pergunta );
 	
-	if( vez == 0 && guardou_perg == 'n'){
+	if( vez == 0 && guardou_perg != 's'){
 		pergunta_orig = pergunta;
 		guardou_perg = 's';
 	}
@@ -2876,8 +2879,8 @@ vez = vez + 1;
 
 
 	 		alert('teste5orig - loop pergunta-orig: ' );
-			 for (var i = 0; i < pergunta_orig.length; i++) {
-				 alert( i + ',' + pergunta_orig[i].id   + ', ' + pergunta_orig[i].pergunta   );
+			 for (var i = 0; i < testao.length; i++) {
+				 alert( i + ',' + testao[i].id   + ', ' + testao[i].pergunta   );
 			 }
 			 
             myApp.hidePreloader();

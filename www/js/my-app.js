@@ -2674,13 +2674,25 @@ function colorirDisabled() {
 }
 
 voltar_pergunta = 0;
+vez = 0;
+pergunta_orig = {};
 
 function proxima_pergunta(pergunta) {
 	
 	alert('teste6 - ini func prox pergunta: '  );
 	
-	alert('teste7 - pergunta: ' + pergunta );
+	//alert('teste7 - pergunta: ' + pergunta );
 	
+	if( vez == 0){
+		pergunta_orig = pergunta;
+	}
+	
+	
+					if( voltar_pergunta == 0){
+					pergunta = 	pergunta_orig;
+					} 
+
+vez++;
     var id_spotcheck = localStorage.getItem('spotcheck_id');
 
     //Verifica as respostas salvas para saber qual a próxima
@@ -2692,13 +2704,13 @@ function proxima_pergunta(pergunta) {
                     //Retira as perguntas que já foram respondidas
                     //pergunta.splice(i, 1);
 					
-					if( voltar_pergunta == 0){
-					alert( 'voltar_pergunta == 0' );
-					pergunta.splice(i, 1);	
-					} else {
-					alert( 'voltar_pergunta == 1' );
+					//if( voltar_pergunta == 0){
+					//alert( 'voltar_pergunta == 0' );
+					//pergunta.splice(i, 1);	
+					//} else {
+					//alert( 'voltar_pergunta == 1' );
 					pergunta.splice(i - 1, 2);	
-					}
+					//}
                 }
             }
         }

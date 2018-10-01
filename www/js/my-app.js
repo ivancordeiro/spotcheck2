@@ -2676,6 +2676,11 @@ function colorirDisabled() {
 voltar_pergunta = 0;
 
 function proxima_pergunta(pergunta) {
+	
+	alert('teste6 - ini func prox pergunta: '  );
+	
+	alert('teste7 - pergunta: ' + pergunta );
+	
     var id_spotcheck = localStorage.getItem('spotcheck_id');
 
     //Verifica as respostas salvas para saber qual a próxima
@@ -2832,6 +2837,19 @@ function proxima_pergunta(pergunta) {
             id_pergunta = pergunta[0].id;
             $(".pergunta").html(pergunta[0].pergunta);
             $(".pergunta").attr("data-id", id_pergunta);
+			
+			alert('teste2 - id_pergunta: ' + id_pergunta );
+			alert('teste3 - pergunta: ' + pergunta[0].pergunta );
+			
+			alert('teste4 - loop pergunta 0: ' );
+			 for (var i = 0; i < pergunta[0].length; i++) {
+				 alert( pergunta[0][i].id  + ', ' + pergunta[0][i].pergunta );
+			 }
+			 
+			 		alert('teste5 - loop pergunta: ' );
+			 for (var i = 0; i < pergunta.length; i++) {
+				 alert( pergunta[i].id   + ', ' + pergunta[i].pergunta   );
+			 }
 
             myApp.hidePreloader();
             $(".resultado").fadeIn();
@@ -2849,6 +2867,7 @@ function proxima_pergunta(pergunta) {
                 //Escreve no arquivo
                 var pergunta_atual = localStorage.getItem("pergunta_atual");
                 var pergunta_atual_peso = 0;
+				alert('teste1 - pergunta_atual: ' + pergunta_atual );
                 var data_atual = new Date();
                 var mes = data_atual.getMonth() + 1;
                 if (mes > 12) {

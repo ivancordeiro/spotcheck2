@@ -2686,7 +2686,7 @@ function proxima_pergunta(pergunta) {
     //Verifica as respostas salvas para saber qual a próxima
     lerArquivo("resposta.json", function(resposta) {
         for (var i = 0; i < pergunta.length; i++) {
-			alert('i:' + i);
+			if( i < 4 ){  alert('i:' + i);  }
             for (var j = 0; j < resposta.length; j++) {
                 if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {
                     //Retira as perguntas que já foram respondidas
@@ -2703,9 +2703,9 @@ function proxima_pergunta(pergunta) {
             }
         }
 		
-		   for (var i = 0; i < pergunta.length; i++) {
-			alert('i2:' + i);
-		   }
+		   //for (var i = 0; i < pergunta.length; i++) {
+			//alert('i2:' + i);
+		   //}
 
         var total = $(".total_perguntas").text();
         //$(".pergunta_atual").text((total - pergunta.length) + 1);
@@ -2841,14 +2841,15 @@ function proxima_pergunta(pergunta) {
 			alert('teste2 - id_pergunta: ' + id_pergunta );
 			alert('teste3 - pergunta: ' + pergunta[0].pergunta );
 			
+			/*
 			alert('teste4 - loop pergunta 0: ' );
 			 for (var i = 0; i < pergunta[0].length; i++) {
 				 alert( pergunta[0][i].id  + ', ' + pergunta[0][i].pergunta );
 			 }
-			 
+			 */
 			 		alert('teste5 - loop pergunta: ' );
 			 for (var i = 0; i < pergunta.length; i++) {
-				 alert( pergunta[i].id   + ', ' + pergunta[i].pergunta   );
+				 alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   );
 			 }
 
             myApp.hidePreloader();

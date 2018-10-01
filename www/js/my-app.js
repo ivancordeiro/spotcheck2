@@ -2719,7 +2719,7 @@ vez = vez + 1;
 					//if( voltar_pergunta == 0){
 					//alert( 'voltar_pergunta == 0' );
 					//
-					pergunta.splice(i, 1);	
+					/////////////////////////pergunta.splice(i, 1);	
 					//} else {
 					//alert( 'voltar_pergunta == 1' );
 					//pergunta.splice(i - 1, 2);	

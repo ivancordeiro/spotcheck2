@@ -2675,6 +2675,7 @@ function colorirDisabled() {
 
 voltar_pergunta = 0;
 vez = 0;
+guardou_perg = 'n';
 pergunta_orig = {};
 
 function proxima_pergunta(pergunta) {
@@ -2683,8 +2684,9 @@ function proxima_pergunta(pergunta) {
 	
 	//alert('teste7 - pergunta: ' + pergunta );
 	
-	if( vez == 0){
+	if( vez == 0 && guardou_perg == 'n'){
 		pergunta_orig = pergunta;
+		guardou_perg = 's';
 	}
 	
 	

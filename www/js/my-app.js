@@ -1705,6 +1705,7 @@ testao = {};
 
                 $(".total_perguntas").text(pergunta.length);
 				testao = pergunta;
+				id_tema2 = id_tema;
                 proxima_pergunta(pergunta);
             })
 
@@ -2878,11 +2879,24 @@ vez = vez + 1;
 			 }
 
 
-	 		alert('teste5orig - loop pergunta-orig: ' );
-			 for (var i = 0; i < testao.length; i++) {
-				 alert( i + ',' + testao[i].id   + ', ' + testao[i].pergunta   );
+
+
+            getManyById(item.id_tema2, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta2) {
+     
+				testao2 = pergunta2;
+				
+					 		alert('teste5orig - loop pergunta-orig: ' );
+			 for (var i = 0; i < testao2.length; i++) {
+				 alert( i + ',' + testao2[i].id   + ', ' + testao2[i].pergunta   );
 			 }
 			 
+       
+            })  ;
+			
+			
+			
+
+
             myApp.hidePreloader();
             $(".resultado").fadeIn();
 

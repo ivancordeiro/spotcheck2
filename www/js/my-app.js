@@ -12,6 +12,7 @@ if (document.location.hostname == "localhost") {
     //url = "http://192.168.25.7/admin/app/"; 
     
 testao = {};
+guardou_perg = 0;
 
     $.ajaxSetup({
         cache: false
@@ -2677,7 +2678,7 @@ function colorirDisabled() {
 
 voltar_pergunta = 0;
 vez = 0;
-guardou_perg = 'n';
+
 pergunta_orig = {};
 
 
@@ -2687,9 +2688,14 @@ function proxima_pergunta(pergunta) {
 	
 	//alert('teste7 - pergunta: ' + pergunta );
 	
-	if( vez == 0 && guardou_perg != 's'){
+	//if( vez == 0 && guardou_perg != 's'){
+		//pergunta_orig = pergunta;
+		//guardou_perg = 's';
+	//}
+	
+		if( guardou_perg != 1){
 		pergunta_orig = pergunta;
-		guardou_perg = 's';
+		guardou_perg = 1;
 	}
 	
 	
@@ -2719,7 +2725,6 @@ vez = vez + 1;
 					//if( voltar_pergunta == 0){
 					//alert( 'voltar_pergunta == 0' );
 					//
-					/////////////////////////
 					pergunta.splice(i, 1);	
 					//} else {
 					//alert( 'voltar_pergunta == 1' );
@@ -2875,28 +2880,15 @@ vez = vez + 1;
 			 */
 			 		alert('teste5 - loop pergunta: ' );
 			 for (var i = 0; i < pergunta.length; i++) {
-				 alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   );
+				 if( i < 5 ){ alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   ); }
 			 }
 
 
-
-
-            getManyById(item.id_tema, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta2) {
-     
-				testao2 = pergunta2;
-				
-					 		alert('teste5orig - loop pergunta-orig: ' );
-			 for (var i = 0; i < testao2.length; i++) {
-				 alert( i + ',' + testao2[i].id   + ', ' + testao2[i].pergunta   );
+	 		alert('teste5orig - loop pergunta-orig: ' );
+			 for (var i = 0; i < pergunta_orig.length; i++) {
+				if( i < 5 ){  alert( i + ',' + pergunta_orig[i].id   + ', ' + pergunta_orig[i].pergunta   );  }
 			 }
 			 
-       
-            })  ;
-			
-			
-			
-
-
             myApp.hidePreloader();
             $(".resultado").fadeIn();
 

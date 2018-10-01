@@ -1706,6 +1706,12 @@ guardou_perg = 0;
 
                 $(".total_perguntas").text(pergunta.length);
 				testao = pergunta;
+				
+	if( guardou_perg != 1){
+		pergunta_orig = pergunta;
+		guardou_perg = 1;
+	}
+	
                 proxima_pergunta(pergunta);
             })
 
@@ -2679,7 +2685,7 @@ function colorirDisabled() {
 voltar_pergunta = 0;
 vez = 0;
 
-pergunta_orig = {};
+//pergunta_orig = {};
 
 
 function proxima_pergunta(pergunta) {
@@ -2693,10 +2699,10 @@ function proxima_pergunta(pergunta) {
 		//guardou_perg = 's';
 	//}
 	
-		if( guardou_perg != 1){
-		pergunta_orig = pergunta;
-		guardou_perg = 1;
-	}
+		//if( guardou_perg != 1){
+		//pergunta_orig = pergunta;
+		//guardou_perg = 1;
+	//}
 	
 	
 					if( voltar_pergunta == 1){

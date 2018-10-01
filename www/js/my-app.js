@@ -2688,7 +2688,7 @@ function proxima_pergunta(pergunta) {
 	}
 	
 	
-					if( voltar_pergunta == 0){
+					if( voltar_pergunta == 1){
 					pergunta = 	pergunta_orig;
 					} 
 
@@ -2698,7 +2698,7 @@ vez++;
     //Verifica as respostas salvas para saber qual a próxima
     lerArquivo("resposta.json", function(resposta) {
         for (var i = 0; i < pergunta.length; i++) {
-			if( i < 4 ){  alert('i:' + i);  }
+			//if( i < 4 ){  alert('i:' + i);  }
             for (var j = 0; j < resposta.length; j++) {
                 if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {
                     //Retira as perguntas que já foram respondidas

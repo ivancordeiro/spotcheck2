@@ -2692,6 +2692,12 @@ function proxima_pergunta(pergunta) {
 	var perg = localStorage.getItem("perg");
 	alert('perg: ' + perg  );
 	
+	
+			for (var i2 = 0; i2 < perg.length; i2++) {
+				if( i2 < 3 ){  alert( i2 + ',' + perg[i2]  );  }
+				
+			}
+	
 	/*
 			  lerArquivo("pergunta_em_uso.json", function(testao6) {
 	

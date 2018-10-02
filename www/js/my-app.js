@@ -2715,8 +2715,17 @@ function proxima_pergunta(pergunta) {
 	if( guardou_perg == 0 ){
 	guardou_perg = 1;
 	testao5 = pergunta;
-	alert('teste7 b' );
+	alert('teste7 testao5 guardou b' );
+	
+
+			 
 	}
+	
+	
+			alert('teste5orig - testao5: ' );
+			 for (var i = 0; i < testao5.length; i++) {
+				if( i < 3 ){  alert( i + ',' + testao5[i].id   + ', ' + testao5[i].pergunta   );  }
+			 }
 	
 	//if( vez == 0 && guardou_perg != 's'){
 		//pergunta_orig = pergunta;
@@ -2919,10 +2928,10 @@ vez = vez + 1;
 			 }
 
 
-	 		alert('teste5orig - loop pergunta-orig2: ' );
-			 for (var i = 0; i < pergunta_orig2.length; i++) {
-				if( i < 3 ){  alert( i + ',' + pergunta_orig2[i].id   + ', ' + pergunta_orig2[i].pergunta   );  }
-			 }
+	 		//alert('teste5orig - loop pergunta-orig2: ' );
+			// for (var i = 0; i < pergunta_orig2.length; i++) {
+				//if( i < 3 ){  alert( i + ',' + pergunta_orig2[i].id   + ', ' + pergunta_orig2[i].pergunta   );  }
+			 //}
 			 
 			// alert('teste5orig - loop pergunta-orig3: ' );
 			// for (var i = 0; i < pergunta_orig3.length; i++) {

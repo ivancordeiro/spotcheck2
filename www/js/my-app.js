@@ -2694,7 +2694,7 @@ function proxima_pergunta(pergunta) {
 	
 	
 			for (var i2 = 0; i2 < perg.length; i2++) {
-				if( i2 < 3 ){  alert( i2 + ',' + perg[i2]  );  }
+				if( i2 < 3 ){  alert( i2 + ',' + perg[i2].pergunta  );  }
 				
 			}
 	
@@ -2729,7 +2729,7 @@ function proxima_pergunta(pergunta) {
 					if( voltar_pergunta == 1){
 					//pergunta = 	pergunta_orig;
 					} 
-	alert('vez: ' + vez  );
+	//alert('vez: ' + vez  );
 	alert('voltar_pergunta: ' + voltar_pergunta  );
 	
 vez = vez + 1;
@@ -2843,44 +2843,7 @@ vez = vez + 1;
 
             });
 
-            /*
-            $.ajax({
-               url: url+'php/getResultados.php',
-               type: 'POST',
-               data: { id_spotcheck:id_spotcheck }
-            }).done(function(data) {
-
-                $(".resultado").html(data);
-                $(".resultado").fadeIn();
-                myApp.hidePreloader();
-
-                $(".navbar-inner .left").html('<a href="selecionar-spotcheck.html" class="link icon-only"><i class="icon icon-back"></i></a>');
-
-                $(".ver-resposta").click(function() {
-                    id_resposta = $(this).attr('resposta-id');
-                    localStorage.setItem("resposta_id",id_resposta);
-
-                    mainView.router.loadPage('ver-resposta.html');
-                });
-
-                var fts = [];
-                fts.push(url+"img/graf1.jpg");
-                fts.push(url+"img/graf2.jpg");
-                fts.push(url+"img/graf3.jpg");
-                fts.push(url+"img/graf4.jpg");
-                var fotos = myApp.photoBrowser({
-                    photos : fts
-                });
-
-                $('.grafs img').each(function(index) {
-                    $(this).off()
-                    $(this).click(function() {
-                        fotos.open(index);
-                    });
-                });
-
-            });
-            */
+           
 
         } else {
 
@@ -2891,8 +2854,8 @@ vez = vez + 1;
             $(".pergunta").html(pergunta[0].pergunta);
             $(".pergunta").attr("data-id", id_pergunta);
 			
-			alert('teste2 - id_pergunta: ' + id_pergunta );
-			alert('teste3 - pergunta: ' + pergunta[0].pergunta );
+		//	alert('teste2 - id_pergunta: ' + id_pergunta );
+		//	alert('teste3 - pergunta: ' + pergunta[0].pergunta );
 			
 			/*
 			alert('teste4 - loop pergunta 0: ' );
@@ -2902,7 +2865,7 @@ vez = vez + 1;
 			 */
 			 		alert('teste5 - loop pergunta: ' );
 			 for (var i = 0; i < pergunta.length; i++) {
-				 alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   );
+			     if( i < 3 ){  	 alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   );   }
 			 }
 
             myApp.hidePreloader();

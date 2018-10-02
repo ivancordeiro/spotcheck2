@@ -16,7 +16,9 @@ testao5 = {};
 guardou_perg = 0;
 guardou_perg2 = 0;
 guardou_perg3 = 0;
-
+pergunta_orig = {};
+pergunta_orig2 = {};
+pergunta_orig3 = {};
 
 
     $.ajaxSetup({
@@ -41,16 +43,7 @@ guardou_perg3 = 0;
 	
 	
 	
-	
-	            //Recupera PERGUNTAS
-            getManyById(item.id_tema, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta3) {
 
-				if( guardou_perg3 != 1){
-					pergunta_orig3 = pergunta3;
-					guardou_perg3 = 1;
-				}	
-
-            })
 
     //document.addEventListener("resume", onResume, false);
     //document.addEventListener("backbutton", onBackKeyDown, false);
@@ -1732,6 +1725,7 @@ guardou_perg3 = 0;
 	if( guardou_perg2 != 1){
 		pergunta_orig2 = pergunta;
 		guardou_perg2 = 1;
+		alert('teste pergunta_orig2')
 	//
 	}
 	
@@ -2930,10 +2924,10 @@ vez = vez + 1;
 				if( i < 3 ){  alert( i + ',' + pergunta_orig2[i].id   + ', ' + pergunta_orig2[i].pergunta   );  }
 			 }
 			 
-			 alert('teste5orig - loop pergunta-orig3: ' );
-			 for (var i = 0; i < pergunta_orig3.length; i++) {
-				if( i < 3 ){  alert( i + ',' + pergunta_orig3[i].id   + ', ' + pergunta_orig3[i].pergunta   );  }
-			 }
+			// alert('teste5orig - loop pergunta-orig3: ' );
+			// for (var i = 0; i < pergunta_orig3.length; i++) {
+				//if( i < 3 ){  alert( i + ',' + pergunta_orig3[i].id   + ', ' + pergunta_orig3[i].pergunta   );  }
+			// }
 			 
             myApp.hidePreloader();
             $(".resultado").fadeIn();

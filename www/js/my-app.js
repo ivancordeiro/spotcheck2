@@ -1706,12 +1706,12 @@ guardou_perg = 0;
                 var total_pergunta = pergunta.length;
 
                 $(".total_perguntas").text(pergunta.length);
-				testao = pergunta;
+				//testao = pergunta;
 				
-	if( guardou_perg != 1){
-		pergunta_orig = pergunta;
-		guardou_perg = 1;
-	}
+	//if( guardou_perg != 1){
+		//pergunta_orig = pergunta;
+		//guardou_perg = 1;
+	//}
 	
                 proxima_pergunta(pergunta);
             })

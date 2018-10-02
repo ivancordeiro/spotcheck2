@@ -2694,7 +2694,7 @@ function proxima_pergunta(pergunta) {
 	
 	 alert('teste perg: ' );
 			 for (var i = 0; i < perg.length; i++) {
-				if ( i < 3 ) {  alert( i + ',' + perg[i].id   + ', ' + perg[i].pergunta   );  }
+				if ( i < 3 ) {  alert( i + ',' + perg[i]  );  }
 			 }
 
 	

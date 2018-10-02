@@ -12,6 +12,7 @@ if (document.location.hostname == "localhost") {
     //url = "http://192.168.25.7/admin/app/"; 
     
 testao = {};
+testao5 = {};
 guardou_perg = 0;
 
     $.ajaxSetup({

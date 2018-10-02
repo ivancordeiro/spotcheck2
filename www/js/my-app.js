@@ -2885,8 +2885,8 @@ vez = vez + 1;
             $(".pergunta").html(pergunta[0].pergunta);
             $(".pergunta").attr("data-id", id_pergunta);
 			
-			`//alert('teste2 - id_pergunta: ' + id_pergunta );
-			//alert('teste3 - pergunta: ' + pergunta[0].pergunta );
+			alert('teste2 - id_pergunta: ' + id_pergunta );
+			alert('teste3 - pergunta: ' + pergunta[0].pergunta );
 			
 			/*
 			alert('teste4 - loop pergunta 0: ' );
@@ -2896,7 +2896,7 @@ vez = vez + 1;
 			 */
 			 		alert('teste5 - loop pergunta: ' );
 			 for (var i = 0; i < pergunta.length; i++) {
-				if ( i < 3 ) {  alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   );  }
+				 alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   );
 			 }
 
             myApp.hidePreloader();

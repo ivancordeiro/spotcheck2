@@ -14,6 +14,10 @@ if (document.location.hostname == "localhost") {
 testao = {};
 testao5 = {};
 guardou_perg = 0;
+guardou_perg2 = 0;
+guardou_perg3 = 0;
+
+
 
     $.ajaxSetup({
         cache: false
@@ -33,6 +37,20 @@ guardou_perg = 0;
     });
 
     var loading = 0;
+	
+	
+	
+	
+	
+	            //Recupera PERGUNTAS
+            getManyById(item.id_tema, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta3) {
+
+				if( guardou_perg3 != 1){
+					pergunta_orig3 = pergunta3;
+					guardou_perg3 = 1;
+				}	
+
+            })
 
     //document.addEventListener("resume", onResume, false);
     //document.addEventListener("backbutton", onBackKeyDown, false);
@@ -929,6 +947,8 @@ guardou_perg = 0;
     });
 
     myApp.onPageInit('spotcheck-inicio', function(page) {
+												  
+		alert(' teste spotcheck-inicio ');
 
         $("select[name=setor]").attr("disabled", "disabled");
         $("select[name=frente]").attr("disabled", "disabled");
@@ -1708,10 +1728,12 @@ guardou_perg = 0;
                 $(".total_perguntas").text(pergunta.length);
 				//testao = pergunta;
 				
-	//if( guardou_perg != 1){
-		//pergunta_orig = pergunta;
-		//guardou_perg = 1;
-	//}
+	//
+	if( guardou_perg2 != 1){
+		pergunta_orig2 = pergunta;
+		guardou_perg2 = 1;
+	//
+	}
 	
                 proxima_pergunta(pergunta);
             })
@@ -2736,16 +2758,16 @@ vez = vez + 1;
                     //Retira as perguntas que já foram respondidas
                     //pergunta.splice(i, 1);
 					
-					if( voltar_pergunta == 0){
+					///////////////if( voltar_pergunta == 0){
 					//alert( 'voltar_pergunta == 0' );
 					//
 					//
 					pergunta.splice(i, 1);	
-					} else {
+					///////////} else {
 					//alert( 'voltar_pergunta == 1' );
 					//pergunta.splice(i - 1, 2);	
-					pergunta.splice(0, resposta.length);
-					}
+					//////////////pergunta.splice(0, pergunta.length);
+					///////////////////}
                 }
 				
 				
@@ -2896,15 +2918,21 @@ vez = vez + 1;
 				 alert( pergunta[0][i].id  + ', ' + pergunta[0][i].pergunta );
 			 }
 			 */
-			 		alert('teste5 - loop pergunta: ' );
+			 
+			 alert('teste5 - loop pergunta: ' );
 			 for (var i = 0; i < pergunta.length; i++) {
 				 if( i < 3 ){ alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   ); }
 			 }
 
 
-	 		alert('teste5orig - loop pergunta-orig: ' );
-			 for (var i = 0; i < testao5.length; i++) {
-				if( i < 3 ){  alert( i + ',' + testao5[i].id   + ', ' + testao5[i].pergunta   );  }
+	 		alert('teste5orig - loop pergunta-orig2: ' );
+			 for (var i = 0; i < pergunta_orig2.length; i++) {
+				if( i < 3 ){  alert( i + ',' + pergunta_orig2[i].id   + ', ' + pergunta_orig2[i].pergunta   );  }
+			 }
+			 
+			 alert('teste5orig - loop pergunta-orig3: ' );
+			 for (var i = 0; i < pergunta_orig3.length; i++) {
+				if( i < 3 ){  alert( i + ',' + pergunta_orig3[i].id   + ', ' + pergunta_orig3[i].pergunta   );  }
 			 }
 			 
             myApp.hidePreloader();

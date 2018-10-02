@@ -30,6 +30,8 @@ if (document.location.hostname == "localhost") {
     });
 
     var loading = 0;
+	
+	perg_teste = 0;
 
     //document.addEventListener("resume", onResume, false);
     //document.addEventListener("backbutton", onBackKeyDown, false);
@@ -2680,14 +2682,15 @@ pergunta_orig = {};
 function proxima_pergunta(pergunta) {
 	
 	alert('teste6 - ini func prox pergunta: '  );
-	
-	var perg = localStorage.getItem("perg");
-	if(perg == ''){
+
+	if(perg_teste == 0){
 	localStorage.setItem("perg", pergunta);
+	perg_teste = 1;
+	alert(  'ok entrou '  );
 	}
 	
-	var perg2 = localStorage.getItem("perg");
-	alert('perg2: ' + perg2  );
+	var perg = localStorage.getItem("perg");
+	alert('perg: ' + perg  );
 	
 	/*
 			  lerArquivo("pergunta_em_uso.json", function(testao6) {

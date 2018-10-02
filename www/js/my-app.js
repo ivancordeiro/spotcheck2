@@ -2690,12 +2690,13 @@ function proxima_pergunta(pergunta) {
 	}
 	
 	var perg = localStorage.getItem("perg");
-	//alert('perg: ' + perg  );
+	//
+	alert('perg: ' + perg  );
 	
-	 alert('teste perg: ' );
-			 for (var i = 0; i < perg.length; i++) {
-				if ( i < 3 ) {  alert( i + ',' + perg[i]  );  }
-			 }
+	// alert('teste perg: ' );
+			 //for (var i = 0; i < perg.length; i++) {
+				//if ( i < 3 ) {  alert( i + ',' + perg[i]  );  }
+			 //}
 
 	
 	/*

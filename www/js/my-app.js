@@ -2690,14 +2690,7 @@ function proxima_pergunta(pergunta) {
 	}
 	
 	var perg = localStorage.getItem("perg");
-	//
 	alert('perg: ' + perg  );
-	
-	// alert('teste perg: ' );
-			 //for (var i = 0; i < perg.length; i++) {
-				//if ( i < 3 ) {  alert( i + ',' + perg[i]  );  }
-			 //}
-
 	
 	/*
 			  lerArquivo("pergunta_em_uso.json", function(testao6) {
@@ -2722,15 +2715,15 @@ function proxima_pergunta(pergunta) {
 	
 	//alert('teste7 - pergunta: ' + pergunta );
 	
-	//if( vez == 0){
-		//pergunta_orig = pergunta;
-	//}
+	if( vez == 0){
+		pergunta_orig = pergunta;
+	}
 	
 	
 					if( voltar_pergunta == 1){
 					//pergunta = 	pergunta_orig;
 					} 
-	//alert('vez: ' + vez  );
+	alert('vez: ' + vez  );
 	alert('voltar_pergunta: ' + voltar_pergunta  );
 	
 vez = vez + 1;
@@ -2901,8 +2894,7 @@ vez = vez + 1;
 				 alert( pergunta[0][i].id  + ', ' + pergunta[0][i].pergunta );
 			 }
 			 */
-			 
-			 alert('teste5 - loop pergunta: ' );
+			 		alert('teste5 - loop pergunta: ' );
 			 for (var i = 0; i < pergunta.length; i++) {
 				if ( i < 3 ) {  alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   );  }
 			 }

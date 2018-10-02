@@ -2681,7 +2681,15 @@ function proxima_pergunta(pergunta) {
 	
 	alert('teste6 - ini func prox pergunta: '  );
 	
+	var perg = localStorage.getItem("perg");
+	if(perg == ''){
+	localStorage.setItem("perg", pergunta);
+	}
 	
+	var perg2 = localStorage.getItem("perg");
+	alert('perg2: ' + perg2  );
+	
+	/*
 			  lerArquivo("pergunta_em_uso.json", function(testao6) {
 	
 			
@@ -2693,14 +2701,14 @@ function proxima_pergunta(pergunta) {
 				
 			for (var i3 = 0; i3 < testao6[i2].length; i3++) {
 				if( i3 < 3 ){  alert( 'i3: ' + i3 + ',' + testao6[i2][i3]  );  }
-			 }
+			}
 			 
 			 
 			 
 			 }
 	
 	
-	    });
+	    });*/
 	
 	//alert('teste7 - pergunta: ' + pergunta );
 	

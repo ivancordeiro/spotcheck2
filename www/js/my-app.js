@@ -2692,7 +2692,14 @@ function proxima_pergunta(pergunta) {
 	
 	alert('teste6 - ini func prox pergunta: '  );
 	
-	//alert('teste7 - pergunta: ' + pergunta );
+	//
+	alert('teste7 - pergunta: ' + pergunta );
+	
+	if( guardou_perg == 0 ){
+	guardou_perg = 1;
+	testao5 = pergunta;
+	alert('teste7 b' );
+	}
 	
 	//if( vez == 0 && guardou_perg != 's'){
 		//pergunta_orig = pergunta;
@@ -2886,13 +2893,13 @@ vez = vez + 1;
 			 */
 			 		alert('teste5 - loop pergunta: ' );
 			 for (var i = 0; i < pergunta.length; i++) {
-				 if( i < 5 ){ alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   ); }
+				 if( i < 3 ){ alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   ); }
 			 }
 
 
 	 		alert('teste5orig - loop pergunta-orig: ' );
-			 for (var i = 0; i < pergunta_orig.length; i++) {
-				if( i < 5 ){  alert( i + ',' + pergunta_orig[i].id   + ', ' + pergunta_orig[i].pergunta   );  }
+			 for (var i = 0; i < testao5.length; i++) {
+				if( i < 3 ){  alert( i + ',' + testao5[i].id   + ', ' + testao5[i].pergunta   );  }
 			 }
 			 
             myApp.hidePreloader();

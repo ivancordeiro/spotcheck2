@@ -41,7 +41,16 @@ pergunta_orig3 = {};
     var loading = 0;
 	
 	
+		    lerArquivo("pergunta_em_uso.json", function(testao6) {
 	
+			
+			alert('testao6: ' );
+			 for (var i2 = 0; i2 < testao6.length; i2++) {
+				if( i2 < 3 ){  alert( i2 + ',' + testao6[i2]  );  }
+			 }
+	
+	
+	    });
 	
 
 
@@ -2721,16 +2730,7 @@ function proxima_pergunta(pergunta) {
 	*/
 
 	
-	    lerArquivo("pergunta_em_uso.json", function(testao6) {
-	
-			
-			alert('testao6: ' );
-			 for (var i2 = 0; i2 < testao6.length; i2++) {
-				if( i2 < 3 ){  alert( i2 + ',' + testao6[i2]  );  }
-			 }
-	
-	
-	    });
+
 		
 		
 

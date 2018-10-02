@@ -1707,6 +1707,7 @@ if (document.location.hostname == "localhost") {
             getManyById(item.id_tema, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta) {
                 var total_pergunta = pergunta.length;
 
+             
                 $(".total_perguntas").text(pergunta.length);
                 proxima_pergunta(pergunta);
             })
@@ -2692,6 +2693,9 @@ function proxima_pergunta(pergunta) {
 		obj = {
 		perg : pergunta
 		}
+		
+		const aa = pergunta;
+		
 	perg_teste = 1;
 	alert(  'ok entrou '  );
 	}
@@ -2702,8 +2706,13 @@ function proxima_pergunta(pergunta) {
 	
 	
 			for (var i2 = 0; i2 < perg.length; i2++) {
+				//if( i2 < 3 ){  	 alert( i2 + ',' + perg[i2].id   + ', ' + perg[i2].pergunta   );   }
 				
-				if( i2 < 3 ){  	 alert( i2 + ',' + perg[i2].id   + ', ' + perg[i2].pergunta   );   }
+			}
+			
+			
+						for (var i2 = 0; i2 < aa.length; i2++) {
+				if( i2 < 3 ){  	 alert( i2 + ',' + aa[i2].id   + ', ' + aa[i2].pergunta   );   }
 				
 			}
 	

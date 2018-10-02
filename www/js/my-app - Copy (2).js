@@ -11,6 +11,15 @@ if (document.location.hostname == "localhost") {
 	url = "http://spotchecktrend.com.br/trend-admin/app/";
     //url = "http://192.168.25.7/admin/app/"; 
     
+testao = {};
+testao5 = {};
+guardou_perg = 0;
+guardou_perg2 = 0;
+guardou_perg3 = 0;
+pergunta_orig = {};
+pergunta_orig2 = {};
+pergunta_orig3 = {};
+
 
     $.ajaxSetup({
         cache: false
@@ -30,6 +39,11 @@ if (document.location.hostname == "localhost") {
     });
 
     var loading = 0;
+	
+	
+	
+	
+
 
     //document.addEventListener("resume", onResume, false);
     //document.addEventListener("backbutton", onBackKeyDown, false);
@@ -926,6 +940,8 @@ if (document.location.hostname == "localhost") {
     });
 
     myApp.onPageInit('spotcheck-inicio', function(page) {
+												  
+		alert(' teste spotcheck-inicio ');
 
         $("select[name=setor]").attr("disabled", "disabled");
         $("select[name=frente]").attr("disabled", "disabled");
@@ -1703,6 +1719,16 @@ if (document.location.hostname == "localhost") {
                 var total_pergunta = pergunta.length;
 
                 $(".total_perguntas").text(pergunta.length);
+				//testao = pergunta;
+				
+	//
+	if( guardou_perg2 != 1){
+		pergunta_orig2 = pergunta;
+		guardou_perg2 = 1;
+		alert('teste pergunta_orig2')
+	//
+	}
+	
                 proxima_pergunta(pergunta);
             })
 
@@ -2675,24 +2701,52 @@ function colorirDisabled() {
 
 voltar_pergunta = 0;
 vez = 0;
-pergunta_orig = {};
+
+//pergunta_orig = {};
+
 
 function proxima_pergunta(pergunta) {
 	
 	alert('teste6 - ini func prox pergunta: '  );
 	
-	//alert('teste7 - pergunta: ' + pergunta );
+	//
+	alert('teste7 - pergunta: ' + pergunta );
 	
-	if( vez == 0){
-		pergunta_orig = pergunta;
+	if( guardou_perg == 0 ){
+	guardou_perg = 1;
+	testao5 = pergunta;
+	alert('teste7 testao5 guardou b' );
+	
+
+			 
 	}
 	
 	
+			alert('teste5orig - testao5: ' );
+			 for (var i = 0; i < testao5.length; i++) {
+				if( i < 3 ){  alert( i + ',' + testao5[i].id   + ', ' + testao5[i].pergunta   );  }
+			 }
+	
+	//if( vez == 0 && guardou_perg != 's'){
+		//pergunta_orig = pergunta;
+		//guardou_perg = 's';
+	//}
+	
+		//if( guardou_perg != 1){
+		//pergunta_orig = pergunta;
+		//guardou_perg = 1;
+	//}
+	
+	
 					if( voltar_pergunta == 1){
-					//pergunta = 	pergunta_orig;
+					//
+					pergunta = 	pergunta_orig;
+					alert('teste8 passou aqui '  );
 					} 
-	alert('vez: ' + vez  );
+					
+	//alert('vez: ' + vez  );
 	alert('voltar_pergunta: ' + voltar_pergunta  );
+	
 	
 vez = vez + 1;
 
@@ -2707,14 +2761,17 @@ vez = vez + 1;
                     //Retira as perguntas que já foram respondidas
                     //pergunta.splice(i, 1);
 					
-					//if( voltar_pergunta == 0){
-					//alert( 'voltar_pergunta == 0' );
-					//pergunta.splice(i, 1);	
-					//} else {
+					///////////////if( voltar_pergunta == 0){
+					alert( 'voltar_pergunta == 0' );
+					pergunta.splice(i, 1);	
+					} else {
 					//alert( 'voltar_pergunta == 1' );
-					pergunta.splice(i - 1, 2);	
-					//}
+					pergunta.splice(i - 2, 3);	
+
+					}
                 }
+				
+				
             }
         }
 		
@@ -2853,8 +2910,8 @@ vez = vez + 1;
             $(".pergunta").html(pergunta[0].pergunta);
             $(".pergunta").attr("data-id", id_pergunta);
 			
-			alert('teste2 - id_pergunta: ' + id_pergunta );
-			alert('teste3 - pergunta: ' + pergunta[0].pergunta );
+			//alert('teste2 - id_pergunta: ' + id_pergunta );
+			//alert('teste3 - pergunta: ' + pergunta[0].pergunta );
 			
 			/*
 			alert('teste4 - loop pergunta 0: ' );
@@ -2862,11 +2919,23 @@ vez = vez + 1;
 				 alert( pergunta[0][i].id  + ', ' + pergunta[0][i].pergunta );
 			 }
 			 */
-			 		alert('teste5 - loop pergunta: ' );
+			 
+			 alert('teste5 - loop pergunta: ' );
 			 for (var i = 0; i < pergunta.length; i++) {
-				 alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   );
+				 if( i < 3 ){ alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   ); }
 			 }
 
+
+	 		//alert('teste5orig - loop pergunta-orig2: ' );
+			// for (var i = 0; i < pergunta_orig2.length; i++) {
+				//if( i < 3 ){  alert( i + ',' + pergunta_orig2[i].id   + ', ' + pergunta_orig2[i].pergunta   );  }
+			 //}
+			 
+			// alert('teste5orig - loop pergunta-orig3: ' );
+			// for (var i = 0; i < pergunta_orig3.length; i++) {
+				//if( i < 3 ){  alert( i + ',' + pergunta_orig3[i].id   + ', ' + pergunta_orig3[i].pergunta   );  }
+			// }
+			 
             myApp.hidePreloader();
             $(".resultado").fadeIn();
 

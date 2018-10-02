@@ -41,17 +41,8 @@ pergunta_orig3 = {};
     var loading = 0;
 	
 	
-		  //  lerArquivo("pergunta_em_uso.json", function(testao6) {
-	
-			
-			//alert('testao6: ' );
-			//for (var i2 = 0; i2 < testao6.length; i2++) {
-				//if( i2 < 3 ){  alert( i2 + ',' + testao6[i2]  );  }
-			// }
 	
 	
-	    //});
-	//
 
 
     //document.addEventListener("resume", onResume, false);
@@ -2718,22 +2709,24 @@ function proxima_pergunta(pergunta) {
 	
 	alert('teste6 - ini func prox pergunta: '  );
 	
-	//alert('teste7 - pergunta: ' + pergunta );
+	//
+	alert('teste7 - pergunta: ' + pergunta );
 	
-	/*
 	if( guardou_perg == 0 ){
 	guardou_perg = 1;
 	testao5 = pergunta;
 	alert('teste7 testao5 guardou b' );
-		 
-	}
-	*/
-
 	
 
-		
-		
-
+			 
+	}
+	
+	
+			alert('teste5orig - testao5: ' );
+			 for (var i = 0; i < testao5.length; i++) {
+				if( i < 3 ){  alert( i + ',' + testao5[i].id   + ', ' + testao5[i].pergunta   );  }
+			 }
+	
 	//if( vez == 0 && guardou_perg != 's'){
 		//pergunta_orig = pergunta;
 		//guardou_perg = 's';
@@ -2959,7 +2952,7 @@ vez = vez + 1;
                 //Escreve no arquivo
                 var pergunta_atual = localStorage.getItem("pergunta_atual");
                 var pergunta_atual_peso = 0;
-				//alert('teste1 - pergunta_atual: ' + pergunta_atual );
+				alert('teste1 - pergunta_atual: ' + pergunta_atual );
                 var data_atual = new Date();
                 var mes = data_atual.getMonth() + 1;
                 if (mes > 12) {

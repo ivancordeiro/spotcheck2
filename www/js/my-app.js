@@ -2690,7 +2690,13 @@ function proxima_pergunta(pergunta) {
 	}
 	
 	var perg = localStorage.getItem("perg");
-	alert('perg: ' + perg  );
+	//alert('perg: ' + perg  );
+	
+	 alert('teste perg: ' );
+			 for (var i = 0; i < perg.length; i++) {
+				if ( i < 3 ) {  alert( i + ',' + perg[i].id   + ', ' + perg[i].pergunta   );  }
+			 }
+
 	
 	/*
 			  lerArquivo("pergunta_em_uso.json", function(testao6) {
@@ -2715,15 +2721,15 @@ function proxima_pergunta(pergunta) {
 	
 	//alert('teste7 - pergunta: ' + pergunta );
 	
-	if( vez == 0){
-		pergunta_orig = pergunta;
-	}
+	//if( vez == 0){
+		//pergunta_orig = pergunta;
+	//}
 	
 	
 					if( voltar_pergunta == 1){
 					//pergunta = 	pergunta_orig;
 					} 
-	alert('vez: ' + vez  );
+	//alert('vez: ' + vez  );
 	alert('voltar_pergunta: ' + voltar_pergunta  );
 	
 vez = vez + 1;
@@ -2885,8 +2891,8 @@ vez = vez + 1;
             $(".pergunta").html(pergunta[0].pergunta);
             $(".pergunta").attr("data-id", id_pergunta);
 			
-			alert('teste2 - id_pergunta: ' + id_pergunta );
-			alert('teste3 - pergunta: ' + pergunta[0].pergunta );
+			`//alert('teste2 - id_pergunta: ' + id_pergunta );
+			//alert('teste3 - pergunta: ' + pergunta[0].pergunta );
 			
 			/*
 			alert('teste4 - loop pergunta 0: ' );
@@ -2894,9 +2900,10 @@ vez = vez + 1;
 				 alert( pergunta[0][i].id  + ', ' + pergunta[0][i].pergunta );
 			 }
 			 */
-			 		alert('teste5 - loop pergunta: ' );
+			 
+			 alert('teste5 - loop pergunta: ' );
 			 for (var i = 0; i < pergunta.length; i++) {
-				 alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   );
+				if ( i < 3 ) {  alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   );  }
 			 }
 
             myApp.hidePreloader();

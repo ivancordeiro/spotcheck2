@@ -1708,7 +1708,7 @@ if (document.location.hostname == "localhost") {
                 var total_pergunta = pergunta.length;
 
                 $(".total_perguntas").text(pergunta.length);
-                proxima_pergunta(pergunta, pergunta2);
+                proxima_pergunta(pergunta);
             })
 
             /*
@@ -2682,7 +2682,7 @@ voltar_pergunta = 0;
 vez = 0;
 pergunta_orig = {};
 
-function proxima_pergunta(pergunta,pergunta2) {
+function proxima_pergunta(pergunta) {
 	
 	alert('teste6 - ini func prox pergunta: '  );
 
@@ -2703,17 +2703,7 @@ function proxima_pergunta(pergunta,pergunta2) {
 	
 			for (var i2 = 0; i2 < perg.length; i2++) {
 				
-				//
 				if( i2 < 3 ){  	 alert( i2 + ',' + perg[i2].id   + ', ' + perg[i2].pergunta   );   }
-				
-			}
-			
-			
-				alert('pergunta2: '  );
-				
-					for (var i2 = 0; i2 < pergunta2.length; i2++) {
-				
-				if( i2 < 3 ){  	 alert( i2 + ',' + pergunta2[i2].id   + ', ' + pergunta2[i2].pergunta   );   }
 				
 			}
 	
@@ -2794,7 +2784,7 @@ vez = vez + 1;
 			 voltar_pergunta = 1;
 
                     $(".resultado").fadeOut(function() {
-                        proxima_pergunta(pergunta, pergunta2);
+                        proxima_pergunta(pergunta);
                     });
               
             });
@@ -2923,7 +2913,7 @@ vez = vez + 1;
 
                 escreverArquivo("resposta.json", JSON.stringify(resp) + ",", 0, function() {
                     $(".resultado").fadeOut(function() {
-                        proxima_pergunta(pergunta, pergunta2);
+                        proxima_pergunta(pergunta);
                     });
                 });
             });
@@ -2956,7 +2946,7 @@ vez = vez + 1;
 
                 escreverArquivo("resposta.json", JSON.stringify(resp) + ",", 0, function() {
                     $(".resultado").fadeOut(function() {
-                        proxima_pergunta(pergunta, pergunta2);
+                        proxima_pergunta(pergunta);
                     });
                 });
             });
@@ -2989,7 +2979,7 @@ vez = vez + 1;
 
                 escreverArquivo("resposta.json", JSON.stringify(resp) + ",", 0, function() {
                     $(".resultado").fadeOut(function() {
-                        proxima_pergunta(pergunta, pergunta2);
+                        proxima_pergunta(pergunta);
                     });
                 });
 

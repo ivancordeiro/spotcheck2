@@ -2736,15 +2736,19 @@ vez = vez + 1;
                     //Retira as perguntas que já foram respondidas
                     //pergunta.splice(i, 1);
 					
-					//if( voltar_pergunta == 0){
+					if( voltar_pergunta == 0){
 					//alert( 'voltar_pergunta == 0' );
 					//
+					//
 					pergunta.splice(i, 1);	
-					//} else {
+					} else {
 					//alert( 'voltar_pergunta == 1' );
 					//pergunta.splice(i - 1, 2);	
-					//}
+					pergunta.splice(0, resposta.length);
+					}
                 }
+				
+				
             }
         }
 		

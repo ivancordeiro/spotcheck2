@@ -1707,27 +1707,38 @@ if (document.location.hostname == "localhost") {
             getManyById(item.id_tema, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta) {
                 var total_pergunta = pergunta.length;
 
-             
+             const aa = pergunta;
                 $(".total_perguntas").text(pergunta.length);
                 proxima_pergunta(pergunta);
             })
 
-            /*
-            $.ajax({
-                url: url + 'php/getPerguntas.php',
-                type: 'POST',
-                data: {
-                    id_tema: item.id_tema
-                }
-            }).done(function(data) {
-                data = JSON.parse(data);
-                $(".total_perguntas").text(data.length);
-                proxima_pergunta(data);
-            });
-            */
+
         });
 
     });
+	
+	
+	
+$(".bbb").off().click(function() {
+
+        var spotcheck_id = localStorage.getItem('spotcheck_id');
+
+        getById(spotcheck_id, "id", "spotcheck.json", function(item) {
+
+            //Recupera PERGUNTAS
+            getManyById(item.id_tema, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta) {
+                var total_pergunta = pergunta.length;
+
+             const aa = pergunta;
+                $(".total_perguntas").text(pergunta.length);
+                proxima_pergunta(pergunta);
+            })
+
+
+        });
+
+    });
+		
 
     myApp.onPageInit('registra-solucao', function(page) {
         id_spotcheck = localStorage.getItem('spotcheck_id');
@@ -2694,7 +2705,7 @@ function proxima_pergunta(pergunta) {
 		perg : pergunta
 		}
 		
-		const aa = pergunta;
+		//const aa = pergunta;
 		
 	perg_teste = 1;
 	alert(  'ok entrou '  );

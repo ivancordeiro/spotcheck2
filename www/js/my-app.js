@@ -2709,24 +2709,31 @@ function proxima_pergunta(pergunta) {
 	
 	alert('teste6 - ini func prox pergunta: '  );
 	
-	//
-	alert('teste7 - pergunta: ' + pergunta );
+	//alert('teste7 - pergunta: ' + pergunta );
 	
+	/*
 	if( guardou_perg == 0 ){
 	guardou_perg = 1;
 	testao5 = pergunta;
 	alert('teste7 testao5 guardou b' );
-	
-
-			 
+		 
 	}
+	*/
 	
 	
+	    lerArquivo("pergunta_em_uso.json", function(testao5) {
+	
+			
 			alert('teste5orig - testao5: ' );
 			 for (var i = 0; i < testao5.length; i++) {
 				if( i < 3 ){  alert( i + ',' + testao5[i].id   + ', ' + testao5[i].pergunta   );  }
 			 }
 	
+	
+	    });
+		
+		
+
 	//if( vez == 0 && guardou_perg != 's'){
 		//pergunta_orig = pergunta;
 		//guardou_perg = 's';
@@ -2744,7 +2751,7 @@ function proxima_pergunta(pergunta) {
 					alert('teste8 passou aqui '  );
 					} 
 					
-	alert('vez: ' + vez  );
+	//alert('vez: ' + vez  );
 	alert('voltar_pergunta: ' + voltar_pergunta  );
 	
 	
@@ -2762,15 +2769,13 @@ vez = vez + 1;
                     //pergunta.splice(i, 1);
 					
 					///////////////if( voltar_pergunta == 0){
-					//alert( 'voltar_pergunta == 0' );
-					//
-					//
+					alert( 'voltar_pergunta == 0' );
 					pergunta.splice(i, 1);	
-					///////////} else {
+					} else {
 					//alert( 'voltar_pergunta == 1' );
-					//pergunta.splice(i - 1, 2);	
-					//////////////pergunta.splice(0, pergunta.length);
-					///////////////////}
+					pergunta.splice(i - 2, 3);	
+
+					}
                 }
 				
 				
@@ -2912,8 +2917,8 @@ vez = vez + 1;
             $(".pergunta").html(pergunta[0].pergunta);
             $(".pergunta").attr("data-id", id_pergunta);
 			
-			alert('teste2 - id_pergunta: ' + id_pergunta );
-			alert('teste3 - pergunta: ' + pergunta[0].pergunta );
+			//alert('teste2 - id_pergunta: ' + id_pergunta );
+			//alert('teste3 - pergunta: ' + pergunta[0].pergunta );
 			
 			/*
 			alert('teste4 - loop pergunta 0: ' );
@@ -2954,7 +2959,7 @@ vez = vez + 1;
                 //Escreve no arquivo
                 var pergunta_atual = localStorage.getItem("pergunta_atual");
                 var pergunta_atual_peso = 0;
-				alert('teste1 - pergunta_atual: ' + pergunta_atual );
+				//alert('teste1 - pergunta_atual: ' + pergunta_atual );
                 var data_atual = new Date();
                 var mes = data_atual.getMonth() + 1;
                 if (mes > 12) {

@@ -32,6 +32,9 @@ if (document.location.hostname == "localhost") {
     var loading = 0;
 	
 	perg_teste = 0;
+	obj = {
+		perg : ''
+		}
 
     //document.addEventListener("resume", onResume, false);
     //document.addEventListener("backbutton", onBackKeyDown, false);
@@ -2684,12 +2687,17 @@ function proxima_pergunta(pergunta) {
 	alert('teste6 - ini func prox pergunta: '  );
 
 	if(perg_teste == 0){
-	localStorage.setItem("perg", pergunta);
+	//localStorage.setItem("perg", pergunta);
+	
+		obj = {
+		perg : pergunta
+		}
 	perg_teste = 1;
 	alert(  'ok entrou '  );
 	}
 	
-	var perg = localStorage.getItem("perg");
+	//var perg = localStorage.getItem("perg");
+	perg = obj.perg;
 	alert('perg: ' + perg  );
 	
 	

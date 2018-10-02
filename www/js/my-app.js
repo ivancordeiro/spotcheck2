@@ -2719,14 +2719,14 @@ function proxima_pergunta(pergunta) {
 		 
 	}
 	*/
+
 	
-	
-	    lerArquivo("pergunta_em_uso.json", function(testao5) {
+	    lerArquivo("pergunta_em_uso.json", function(testao6) {
 	
 			
 			alert('teste5orig - testao5: ' );
-			 for (var i = 0; i < testao5.length; i++) {
-				if( i < 3 ){  alert( i + ',' + testao5[i].id   + ', ' + testao5[i].pergunta   );  }
+			 for (var i2 = 0; i2 < testao6.length; i2++) {
+				if( i2 < 3 ){  alert( i2 + ',' + testao6[i2]  );  }
 			 }
 	
 	

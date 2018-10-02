@@ -2688,6 +2688,15 @@ function proxima_pergunta(pergunta) {
 			alert('testao6: ' );
 			for (var i2 = 0; i2 < testao6.length; i2++) {
 				if( i2 < 3 ){  alert( i2 + ',' + testao6[i2]  );  }
+				
+				
+				
+			for (var i3 = 0; i3 < testao6[i2].length; i3++) {
+				if( i3 < 3 ){  alert( 'i3: ' + i3 + ',' + testao6[i2][i3]  );  }
+			 }
+			 
+			 
+			 
 			 }
 	
 	

@@ -2702,7 +2702,8 @@ function proxima_pergunta(pergunta) {
 	
 	
 			for (var i2 = 0; i2 < perg.length; i2++) {
-				if( i2 < 3 ){  alert( i2 + ',' + perg[i2].pergunta  );  }
+				
+				if( i2 < 3 ){  	 alert( i2 + ',' + pergunta[i2].id   + ', ' + pergunta[i2].pergunta   );   }
 				
 			}
 	
@@ -2755,10 +2756,11 @@ vez = vez + 1;
 					
 					//if( voltar_pergunta == 0){
 					//alert( 'voltar_pergunta == 0' );
-					//pergunta.splice(i, 1);	
+					//
+					pergunta.splice(i, 1);	
 					//} else {
 					//alert( 'voltar_pergunta == 1' );
-					pergunta.splice(i - 1, 2);	
+					/////pergunta.splice(i - 1, 2);	
 					//}
                 }
             }

@@ -1701,20 +1701,6 @@ alert('teste4 spotcheck-inicio spotcheck-inicio function(page ');
     myApp.onPageInit('spotcheck-pergunta', function(page) {
 													
 													
-													
-															
-		$(".bbb").off().click(function() {
-
-alert('clicou btn voltar');
-                   // $(".resultado").fadeIn(function() {
-                        mainView.router.loadPage('spotcheck-pergunta.html');
-                    //});
-
-
-        });
-		
-													
-													
 													alert('teste5 spotcheck-pergunta spotcheck-inicio function(page ');
 
         var spotcheck_id = localStorage.getItem('spotcheck_id');
@@ -1764,8 +1750,18 @@ alert('clicou btn voltar');
 		
 		
 		
+/*		
+		$(".bbb").off().click(function() {
 
+alert('clicou btn voltar');
+                    $(".resultado").fadeIn(function() {
+                        mainView.router.loadPage('spotcheck-pergunta.html');
+                    });
+
+
+        });
 		
+	*/	
 		
 		
 		
@@ -3867,4 +3863,15 @@ function checkInternet() {
 
        return true;
     }
+}
+
+
+
+function teste() {
+	
+	alert('clicou btn voltar funcao ');
+                    $(".resultado").fadeIn(function() {
+                        mainView.router.loadPage('spotcheck-pergunta.html');
+                    });
+	
 }

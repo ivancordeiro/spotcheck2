@@ -1733,7 +1733,6 @@ if (document.location.hostname == "localhost") {
 			               }
 
                 $(".total_perguntas").text(pergunta3.length);
-				pergunta = pergunta3;
                 proxima_pergunta(pergunta3);
 				
             })//3

@@ -9,7 +9,7 @@ if (document.location.hostname == "localhost") {
     //url = "http://192.168.25.7/admin/app/";
    // url = "http://dev.publixcomunicacao.com.br/trend-admin/app/";
 	url = "http://spotchecktrend.com.br/trend-admin/app/";
-    //url = "http://192.168.25.7/admin/app/"; 
+    //url = "http://192.168.25.7/admin/app/";
     
 
     $.ajaxSetup({
@@ -30,11 +30,6 @@ if (document.location.hostname == "localhost") {
     });
 
     var loading = 0;
-	
-	perg_teste = 0;
-	obj = {
-		perg : ''
-		}
 
     //document.addEventListener("resume", onResume, false);
     //document.addEventListener("backbutton", onBackKeyDown, false);
@@ -748,6 +743,8 @@ if (document.location.hostname == "localhost") {
                 var id = $(this).attr("data-id");
                 localStorage.setItem("spotcheck_id", id);
 
+alert('teste2 option-checkspot preparar-spotcheck spotcheck-inicio');
+
                 mainView.router.loadPage('spotcheck-inicio.html');
             });
 
@@ -843,6 +840,8 @@ if (document.location.hostname == "localhost") {
             localStorage.removeItem("spotcheck_id");
 
             mainView.router.loadPage('spotcheck-inicio.html');
+			
+			alert('teste1 clic bot preparar-spotcheck');
 
         })
 
@@ -931,6 +930,8 @@ if (document.location.hostname == "localhost") {
     });
 
     myApp.onPageInit('spotcheck-inicio', function(page) {
+												  
+alert('teste4 spotcheck-inicio spotcheck-inicio function(page ');
 
         $("select[name=setor]").attr("disabled", "disabled");
         $("select[name=frente]").attr("disabled", "disabled");
@@ -1698,6 +1699,9 @@ if (document.location.hostname == "localhost") {
     });
 
     myApp.onPageInit('spotcheck-pergunta', function(page) {
+													
+													
+													alert('teste5 spotcheck-pergunta spotcheck-inicio function(page ');
 
         var spotcheck_id = localStorage.getItem('spotcheck_id');
 
@@ -1707,19 +1711,36 @@ if (document.location.hostname == "localhost") {
             getManyById(item.id_tema, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta) {
                 var total_pergunta = pergunta.length;
 
-             const aa = pergunta;
                 $(".total_perguntas").text(pergunta.length);
-                proxima_pergunta(pergunta);
+				
+				alert('teste6 pergnta_teste atual (cancelada a chamada): ');
+				pergunta_teste = pergunta ;
+				
+			              for (var i2 = 0; i2 < pergunta_teste.length; i2++) {
+							  
+				           if( i2 < 3 ){   alert( i2 + ',' + pergunta_teste[i2].id   + ', ' + pergunta_teste[i2].pergunta   );   }
+				
+			               }
+																		   
+                //proxima_pergunta(pergunta);
             })
 
-
+            /*
+            $.ajax({
+                url: url + 'php/getPerguntas.php',
+                type: 'POST',
+                data: {
+                    id_tema: item.id_tema
+                }
+            }).done(function(data) {
+                data = JSON.parse(data);
+                $(".total_perguntas").text(data.length);
+                proxima_pergunta(data);
+            });
+            */
         });
 
     });
-	
-	
-	
-
 
     myApp.onPageInit('registra-solucao', function(page) {
         id_spotcheck = localStorage.getItem('spotcheck_id');
@@ -2671,127 +2692,22 @@ function colorirDisabled() {
     });
 }
 
-voltar_pergunta = 0;
-vez = 0;
-pergunta_orig = {};
-
 function proxima_pergunta(pergunta) {
-	
-	alert('teste6 - ini func prox pergunta: '  );
-
-	if(perg_teste == 0){
-	//localStorage.setItem("perg", pergunta);
-	
-		obj = {
-		perg : pergunta
-		}
-		
-		//const aa = pergunta;
-		
-	perg_teste = 1;
-	alert(  'ok entrou '  );
-	}
-	
-	//var perg = localStorage.getItem("perg");
-	perg = obj.perg;
-	alert('perg: ' + perg  );
-	
-	
-			for (var i2 = 0; i2 < perg.length; i2++) {
-				//if( i2 < 3 ){  	 alert( i2 + ',' + perg[i2].id   + ', ' + perg[i2].pergunta   );   }
-				
-			}
-			
-			
-						for (var i2 = 0; i2 < aa.length; i2++) {
-				if( i2 < 3 ){  	 alert( i2 + ',' + aa[i2].id   + ', ' + aa[i2].pergunta   );   }
-				
-			}
-	
-	/*
-			  lerArquivo("pergunta_em_uso.json", function(testao6) {
-	
-			
-			alert('testao6: ' );
-			for (var i2 = 0; i2 < testao6.length; i2++) {
-				if( i2 < 3 ){  alert( i2 + ',' + testao6[i2]  );  }
-				
-				
-				
-			for (var i3 = 0; i3 < testao6[i2].length; i3++) {
-				if( i3 < 3 ){  alert( 'i3: ' + i3 + ',' + testao6[i2][i3]  );  }
-			}
-			 
-			 
-			 
-			 }
-	
-	
-	    });*/
-	
-	//alert('teste7 - pergunta: ' + pergunta );
-	
-	if( vez == 0){
-		pergunta_orig = pergunta;
-	}
-	
-	
-					if( voltar_pergunta == 1){
-					//pergunta = 	pergunta_orig;
-					} 
-	//alert('vez: ' + vez  );
-	alert('voltar_pergunta: ' + voltar_pergunta  );
-	
-vez = vez + 1;
-
     var id_spotcheck = localStorage.getItem('spotcheck_id');
 
     //Verifica as respostas salvas para saber qual a próxima
     lerArquivo("resposta.json", function(resposta) {
         for (var i = 0; i < pergunta.length; i++) {
-			//if( i < 4 ){  alert('i:' + i);  }
             for (var j = 0; j < resposta.length; j++) {
                 if (id_spotcheck == resposta[j].id_spotcheck && pergunta[i].id == resposta[j].id_pergunta) {
                     //Retira as perguntas que já foram respondidas
-                    //pergunta.splice(i, 1);
-					
-					//if( voltar_pergunta == 0){
-					//alert( 'voltar_pergunta == 0' );
-					//
-					pergunta.splice(i, 1);	
-					//} else {
-					//alert( 'voltar_pergunta == 1' );
-					/////pergunta.splice(i - 1, 2);	
-					//}
+                    pergunta.splice(i, 1);
                 }
             }
         }
-		
-		   //for (var i = 0; i < pergunta.length; i++) {
-			//alert('i2:' + i);
-		   //}
 
         var total = $(".total_perguntas").text();
-        //$(".pergunta_atual").text((total - pergunta.length) + 1);
-		
-					if( voltar_pergunta == 0){
-					$(".pergunta_atual").text((total - pergunta.length) + 1);	
-					} else {
-					$(".pergunta_atual").text((total - pergunta.length) - 1);	
-					}
-		
-			$(".bt_voltar_new_pergunta").off().click(function() {
-															  
-			 voltar_pergunta = 1;
-
-                    $(".resultado").fadeOut(function() {
-                        proxima_pergunta(pergunta);
-                    });
-              
-            });
-			
-			
-			
+        $(".pergunta_atual").text((total - pergunta.length) + 1);
 
         if (pergunta.length == 0) {
             //myApp.showPreloader("Aguarde");
@@ -2854,7 +2770,44 @@ vez = vez + 1;
 
             });
 
-           
+            /*
+            $.ajax({
+               url: url+'php/getResultados.php',
+               type: 'POST',
+               data: { id_spotcheck:id_spotcheck }
+            }).done(function(data) {
+
+                $(".resultado").html(data);
+                $(".resultado").fadeIn();
+                myApp.hidePreloader();
+
+                $(".navbar-inner .left").html('<a href="selecionar-spotcheck.html" class="link icon-only"><i class="icon icon-back"></i></a>');
+
+                $(".ver-resposta").click(function() {
+                    id_resposta = $(this).attr('resposta-id');
+                    localStorage.setItem("resposta_id",id_resposta);
+
+                    mainView.router.loadPage('ver-resposta.html');
+                });
+
+                var fts = [];
+                fts.push(url+"img/graf1.jpg");
+                fts.push(url+"img/graf2.jpg");
+                fts.push(url+"img/graf3.jpg");
+                fts.push(url+"img/graf4.jpg");
+                var fotos = myApp.photoBrowser({
+                    photos : fts
+                });
+
+                $('.grafs img').each(function(index) {
+                    $(this).off()
+                    $(this).click(function() {
+                        fotos.open(index);
+                    });
+                });
+
+            });
+            */
 
         } else {
 
@@ -2864,20 +2817,6 @@ vez = vez + 1;
             id_pergunta = pergunta[0].id;
             $(".pergunta").html(pergunta[0].pergunta);
             $(".pergunta").attr("data-id", id_pergunta);
-			
-		//	alert('teste2 - id_pergunta: ' + id_pergunta );
-		//	alert('teste3 - pergunta: ' + pergunta[0].pergunta );
-			
-			/*
-			alert('teste4 - loop pergunta 0: ' );
-			 for (var i = 0; i < pergunta[0].length; i++) {
-				 alert( pergunta[0][i].id  + ', ' + pergunta[0][i].pergunta );
-			 }
-			 */
-			 		alert('teste5 - loop pergunta: ' );
-			 for (var i = 0; i < pergunta.length; i++) {
-			     if( i < 3 ){  	 alert( i + ',' + pergunta[i].id   + ', ' + pergunta[i].pergunta   );   }
-			 }
 
             myApp.hidePreloader();
             $(".resultado").fadeIn();
@@ -2895,7 +2834,6 @@ vez = vez + 1;
                 //Escreve no arquivo
                 var pergunta_atual = localStorage.getItem("pergunta_atual");
                 var pergunta_atual_peso = 0;
-				alert('teste1 - pergunta_atual: ' + pergunta_atual );
                 var data_atual = new Date();
                 var mes = data_atual.getMonth() + 1;
                 if (mes > 12) {

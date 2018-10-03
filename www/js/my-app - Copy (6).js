@@ -1713,14 +1713,8 @@ if (document.location.hostname == "localhost") {
 					
 			bt_voltar = 1;
 			
-			       apagar_jsons_teste = 1;
-                  escreverArquivo("resposta.json", "", apagar_jsons_teste, function() {
-                  
-                  });
-			
 			
 				alert('teste6b clicou btn bbb: ');	
-				
 			
 					
 		getById(spotcheck_id, "id", "spotcheck.json", function(item) {//2
@@ -2770,13 +2764,6 @@ function colorirDisabled() {
     });
 }
 
-
-
-
-
-
-
-
 function proxima_pergunta(pergunta) {
 	
 	pergunta = pergunta_teste ;
@@ -2815,17 +2802,15 @@ function proxima_pergunta(pergunta) {
             }
         }
 
-       // var total = $(".total_perguntas").text();
+        var total = $(".total_perguntas").text();
         //$(".pergunta_atual").text((total - pergunta.length) + 1);
 		
 		  if ( bt_voltar == 1) {
-		var total =  pergunta_teste.length;
-        $(".pergunta_atual").text(1);
+			 $(".pergunta_atual").text((total - pergunta.length) + 1);  
 		  } else {
 			  
-			   var total = $(".total_perguntas").text();
-        $(".pergunta_atual").text((total - pergunta.length) + 1);
-			// bt_voltar = 0;
+			 $(".pergunta_atual").text((total - pergunta.length) ); 
+			 bt_voltar = 0;
 		  }
 
         if (pergunta.length == 0) {
@@ -2889,7 +2874,44 @@ function proxima_pergunta(pergunta) {
 
             });
 
-           
+            /*
+            $.ajax({
+               url: url+'php/getResultados.php',
+               type: 'POST',
+               data: { id_spotcheck:id_spotcheck }
+            }).done(function(data) {
+
+                $(".resultado").html(data);
+                $(".resultado").fadeIn();
+                myApp.hidePreloader();
+
+                $(".navbar-inner .left").html('<a href="selecionar-spotcheck.html" class="link icon-only"><i class="icon icon-back"></i></a>');
+
+                $(".ver-resposta").click(function() {
+                    id_resposta = $(this).attr('resposta-id');
+                    localStorage.setItem("resposta_id",id_resposta);
+
+                    mainView.router.loadPage('ver-resposta.html');
+                });
+
+                var fts = [];
+                fts.push(url+"img/graf1.jpg");
+                fts.push(url+"img/graf2.jpg");
+                fts.push(url+"img/graf3.jpg");
+                fts.push(url+"img/graf4.jpg");
+                var fotos = myApp.photoBrowser({
+                    photos : fts
+                });
+
+                $('.grafs img').each(function(index) {
+                    $(this).off()
+                    $(this).click(function() {
+                        fotos.open(index);
+                    });
+                });
+
+            });
+            */
 
         } else {
 
@@ -3024,10 +3046,6 @@ function proxima_pergunta(pergunta) {
             });
         }
     });
-	
-
-			 bt_voltar = 0;
-		 
 }
 
 // Generate dynamic page

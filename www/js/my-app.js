@@ -10,6 +10,8 @@ if (document.location.hostname == "localhost") {
    // url = "http://dev.publixcomunicacao.com.br/trend-admin/app/";
 	url = "http://spotchecktrend.com.br/trend-admin/app/";
     //url = "http://192.168.25.7/admin/app/";
+	
+	pergunta_teste = {} ;
     
 
     $.ajaxSetup({
@@ -1733,7 +1735,7 @@ if (document.location.hostname == "localhost") {
 			               }
 
                 $(".total_perguntas").text(pergunta3.length);
-				pergunta = pergunta3;
+				pergunta_teste = pergunta3;
                 proxima_pergunta(pergunta3);
 				
             })//3
@@ -2766,13 +2768,13 @@ function proxima_pergunta(pergunta) {
 	
 	
 	
-						//alert('teste7 pergnta_teste atual (dentro da funcao pergunta): ');
+						alert('teste7 pergnta_teste atual (dentro da funcao pergunta): ');
 		
-			              // for (var i2 = 0; i2 < pergunta_teste.length; i2++) {
+			               for (var i2 = 0; i2 < pergunta_teste.length; i2++) {  
 							  
-				           //if( i2 < 3 ){   alert( i2 + ',' + pergunta_teste[i2].id   + ', ' + pergunta_teste[i2].pergunta   );   }
+				          if( i2 < 3 ){   alert( i2 + ',' + pergunta_teste[i2].id   + ', ' + pergunta_teste[i2].pergunta   );   }
 				
-			              // }
+			              }
 						   
 						   
 						   

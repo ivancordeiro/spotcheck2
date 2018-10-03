@@ -1719,7 +1719,26 @@ if (document.location.hostname == "localhost") {
 	
 	
 	
+$(".bbb").off().click(function() {
 
+        var spotcheck_id = localStorage.getItem('spotcheck_id');
+
+        getById(spotcheck_id, "id", "spotcheck.json", function(item) {
+
+            //Recupera PERGUNTAS
+            getManyById(item.id_tema, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta) {
+                var total_pergunta = pergunta.length;
+
+             const aa = pergunta;
+                $(".total_perguntas").text(pergunta.length);
+                proxima_pergunta(pergunta);
+            })
+
+
+        });
+
+    });
+		
 
     myApp.onPageInit('registra-solucao', function(page) {
         id_spotcheck = localStorage.getItem('spotcheck_id');

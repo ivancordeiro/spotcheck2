@@ -12,7 +12,6 @@ if (document.location.hostname == "localhost") {
     //url = "http://192.168.25.7/admin/app/";
 	
 	pergunta_teste = {} ;
-	bt_voltar = 0;
     
 
     $.ajaxSetup({
@@ -1711,7 +1710,7 @@ if (document.location.hostname == "localhost") {
 		    $(".bbb a").click(function() {//1
 									   
 					
-			bt_voltar = 1;
+			
 			
 			
 				alert('teste6b clicou btn bbb: ');	
@@ -2803,15 +2802,7 @@ function proxima_pergunta(pergunta) {
         }
 
         var total = $(".total_perguntas").text();
-        //$(".pergunta_atual").text((total - pergunta.length) + 1);
-		
-		  if ( bt_voltar == 1) {
-			 $(".pergunta_atual").text((total - pergunta.length) + 1);  
-		  } else {
-			  
-			 $(".pergunta_atual").text((total - pergunta.length) ); 
-			 bt_voltar = 0;
-		  }
+        $(".pergunta_atual").text((total - pergunta.length) + 1);
 
         if (pergunta.length == 0) {
             //myApp.showPreloader("Aguarde");

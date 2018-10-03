@@ -1751,15 +1751,7 @@ alert('teste4 spotcheck-inicio spotcheck-inicio function(page ');
 		
 		
 
-		
-		
-		
-		
-
     });
-													
-													
-													
 
     myApp.onPageInit('registra-solucao', function(page) {
         id_spotcheck = localStorage.getItem('spotcheck_id');

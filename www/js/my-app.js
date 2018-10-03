@@ -1713,7 +1713,7 @@ alert('teste4 spotcheck-inicio spotcheck-inicio function(page ');
 
                 $(".total_perguntas").text(pergunta.length);
 				
-				alert('teste6 pergunta_teste atual (primeira chamada chamada): ');
+				alert('teste6 pergnta_teste atual (primeira chamada chamada): ');
 				
 				 var guardou_perg = localStorage.getItem("guardou_perg");
 				 alert( 'guardou_perg:' + guardou_perg );
@@ -1750,18 +1750,7 @@ alert('teste4 spotcheck-inicio spotcheck-inicio function(page ');
 		
 		
 		
-		
-		$(".bbb").off().click(function() {
 
-alert('clicou btn voltar');
-                    $(".resultado").fadeIn(function() {
-                        mainView.router.loadPage('spotcheck-pergunta.html');
-                    });
-
-
-        });
-		
-		
 		
 		
 		

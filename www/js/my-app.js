@@ -1713,8 +1713,15 @@ alert('teste4 spotcheck-inicio spotcheck-inicio function(page ');
 
                 $(".total_perguntas").text(pergunta.length);
 				
-				alert('teste6 pergnta_teste atual (primeira chamada chamada): ');
+				alert('teste6 pergunta_teste atual (primeira chamada chamada): ');
+				
+				 var guardou_perg = localStorage.getItem("guardou_perg");
+				 alert( 'guardou_perg:' + guardou_perg );
+				 
+				 if( guardou_perg != "sim"  ){
 				pergunta_teste = pergunta ;
+				localStorage.setItem("guardou_perg", "sim");
+				 }
 				
 			              for (var i2 = 0; i2 < pergunta_teste.length; i2++) {
 							  
@@ -1739,8 +1746,30 @@ alert('teste4 spotcheck-inicio spotcheck-inicio function(page ');
             });
             */
         });
+		
+		
+		
+		
+		
+		$(".bbb").off().click(function() {
+
+                    $(".resultado").fadeIn(function() {
+                        mainView.router.loadPage('spotcheck-pergunta.html');
+                    });
+
+
+        });
+		
+		
+		
+		
+		
+		
 
     });
+													
+													
+													
 
     myApp.onPageInit('registra-solucao', function(page) {
         id_spotcheck = localStorage.getItem('spotcheck_id');
@@ -2698,7 +2727,7 @@ function proxima_pergunta(pergunta) {
 	
 					alert('teste7 pergnta_teste atual (dentro da funcao pergunta): ');
 		
-			              for (var i2 = 0; i2 < pergunta_teste.length; i2++) {
+			               for (var i2 = 0; i2 < pergunta_teste.length; i2++) {
 							  
 				           if( i2 < 3 ){   alert( i2 + ',' + pergunta_teste[i2].id   + ', ' + pergunta_teste[i2].pergunta   );   }
 				
@@ -2707,9 +2736,9 @@ function proxima_pergunta(pergunta) {
 						   
 						   
 						   
-						   			alert('teste8 PERGUNTA atual (dentro da funcao pergunta): ');
+						   alert('teste8 PERGUNTA atual (dentro da funcao pergunta): ');
 		
-			              for (var i2 = 0; i2 < pergunta.length; i2++) {
+			               for (var i2 = 0; i2 < pergunta.length; i2++) {
 							  
 				           if( i2 < 3 ){   alert( i2 + ',' + pergunta[i2].id   + ', ' + pergunta[i2].pergunta   );   }
 				

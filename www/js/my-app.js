@@ -1750,7 +1750,7 @@ alert('teste4 spotcheck-inicio spotcheck-inicio function(page ');
 		
 		
 		
-/*		
+		
 		$(".bbb").off().click(function() {
 
 alert('clicou btn voltar');
@@ -1761,7 +1761,7 @@ alert('clicou btn voltar');
 
         });
 		
-	*/	
+		
 		
 		
 		
@@ -3863,15 +3863,4 @@ function checkInternet() {
 
        return true;
     }
-}
-
-
-
-function teste() {
-	
-	alert('clicou btn voltar funcao ');
-                    $(".resultado").fadeIn(function() {
-                        mainView.router.loadPage('spotcheck-pergunta.html');
-                    });
-	
 }

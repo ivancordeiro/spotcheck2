@@ -1693,101 +1693,14 @@ if (document.location.hostname == "localhost") {
     });
 
     myApp.onPageInit('spotcheck-pergunta', function(page) {
-													
-	alert('teste5 spotcheck-pergunta spotcheck-inicio function(page ');
 
         var spotcheck_id = localStorage.getItem('spotcheck_id');
-		
-		
-		
-		
-		
-		
-		
-		
-		    $(".bbb a").click(function() {//1
-									   
-					
-			
-			
-			
-				alert('teste6b clicou btn bbb: ');	
-			
-					
-		getById(spotcheck_id, "id", "spotcheck.json", function(item) {//2
-															   
-															   alert('entrou primeira bbb: ');	
-
-            //Recupera PERGUNTAS
-            getManyById(item.id_tema, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta3) {//3
-                var total_pergunta3 = pergunta3.length;
-				
-				  alert('entrou segunda bbb: ');	
-				  
-				pergunta_teste3 = pergunta3 ;
-
-			              for (var i2 = 0; i2 < pergunta_teste3.length; i2++) {
-							  
-				           if( i2 < 3 ){   alert( i2 + ',' + pergunta_teste3[i2].id   + ', ' + pergunta_teste3[i2].pergunta   );   }
-				
-			               }
-
-                $(".total_perguntas").text(pergunta3.length);
-                proxima_pergunta(pergunta3);
-				
-            })//3
-
-
-        });//2
-									   
-									   
-									   
-
-
-
-
-
-
-
-
-
-            });//1
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 
         getById(spotcheck_id, "id", "spotcheck.json", function(item) {
 
             //Recupera PERGUNTAS
             getManyById(item.id_tema, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta) {
                 var total_pergunta = pergunta.length;
-				
-				
-				alert('teste6 pergnta_teste atual (primeira chamada chamada): ');
-				
-				 var guardou_perg = localStorage.getItem("guardou_perg");
-				 alert( 'guardou_perg:' + guardou_perg );
-				 
-				 if( guardou_perg != "sim"  ){
-				pergunta_teste = pergunta ;
-				localStorage.setItem("guardou_perg", "sim");
-				 }
-				
-			              for (var i2 = 0; i2 < pergunta_teste.length; i2++) {
-							  
-				           if( i2 < 3 ){   alert( i2 + ',' + pergunta_teste[i2].id   + ', ' + pergunta_teste[i2].pergunta   );   }
-				
-			               }
 
                 $(".total_perguntas").text(pergunta.length);
                 proxima_pergunta(pergunta);

@@ -743,6 +743,8 @@ if (document.location.hostname == "localhost") {
                 var id = $(this).attr("data-id");
                 localStorage.setItem("spotcheck_id", id);
 
+alert('teste2 option-checkspot preparar-spotcheck spotcheck-inicio');
+
                 mainView.router.loadPage('spotcheck-inicio.html');
             });
 
@@ -838,6 +840,8 @@ if (document.location.hostname == "localhost") {
             localStorage.removeItem("spotcheck_id");
 
             mainView.router.loadPage('spotcheck-inicio.html');
+			
+			alert('teste1 clic bot preparar-spotcheck');
 
         })
 
@@ -926,6 +930,8 @@ if (document.location.hostname == "localhost") {
     });
 
     myApp.onPageInit('spotcheck-inicio', function(page) {
+												  
+alert('teste4 spotcheck-inicio spotcheck-inicio function(page ');
 
         $("select[name=setor]").attr("disabled", "disabled");
         $("select[name=frente]").attr("disabled", "disabled");
@@ -1694,84 +1700,18 @@ if (document.location.hostname == "localhost") {
 
     myApp.onPageInit('spotcheck-pergunta', function(page) {
 													
-	alert('teste5 spotcheck-pergunta spotcheck-inicio function(page ');
+													
+													alert('teste5 spotcheck-pergunta spotcheck-inicio function(page ');
 
         var spotcheck_id = localStorage.getItem('spotcheck_id');
-		
-		
-		
-		
-		
-		
-		
-		
-		    $(".bbb a").click(function() {//1
-									   
-					
-			
-			
-			
-				alert('teste6b clicou btn bbb: ');	
-			
-					
-		getById(spotcheck_id, "id", "spotcheck.json", function(item) {//2
-															   
-															   alert('entrou primeira bbb: ');	
-
-            //Recupera PERGUNTAS
-            getManyById(item.id_tema, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta3) {//3
-                var total_pergunta3 = pergunta3.length;
-				
-				  alert('entrou segunda bbb: ');	
-				  
-				pergunta_teste3 = pergunta3 ;
-
-			              for (var i2 = 0; i2 < pergunta_teste3.length; i2++) {
-							  
-				           if( i2 < 3 ){   alert( i2 + ',' + pergunta_teste3[i2].id   + ', ' + pergunta_teste3[i2].pergunta   );   }
-				
-			               }
-
-                $(".total_perguntas").text(pergunta3.length);
-                proxima_pergunta(pergunta3);
-				
-            })//3
-
-
-        });//2
-									   
-									   
-									   
-
-
-
-
-
-
-
-
-
-            });//1
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 
         getById(spotcheck_id, "id", "spotcheck.json", function(item) {
 
             //Recupera PERGUNTAS
             getManyById(item.id_tema, "id_tema_em_uso", "pergunta_em_uso.json", function(pergunta) {
                 var total_pergunta = pergunta.length;
-				
+
+                $(".total_perguntas").text(pergunta.length);
 				
 				alert('teste6 pergnta_teste atual (primeira chamada chamada): ');
 				
@@ -1788,8 +1728,7 @@ if (document.location.hostname == "localhost") {
 				           if( i2 < 3 ){   alert( i2 + ',' + pergunta_teste[i2].id   + ', ' + pergunta_teste[i2].pergunta   );   }
 				
 			               }
-
-                $(".total_perguntas").text(pergunta.length);
+																		   
                 proxima_pergunta(pergunta);
             })
 
@@ -1807,6 +1746,10 @@ if (document.location.hostname == "localhost") {
             });
             */
         });
+		
+		
+		
+		
 
     });
 
@@ -2762,6 +2705,26 @@ function colorirDisabled() {
 
 function proxima_pergunta(pergunta) {
     var id_spotcheck = localStorage.getItem('spotcheck_id');
+	
+	
+					alert('teste7 pergnta_teste atual (dentro da funcao pergunta): ');
+		
+			               for (var i2 = 0; i2 < pergunta_teste.length; i2++) {
+							  
+				           if( i2 < 3 ){   alert( i2 + ',' + pergunta_teste[i2].id   + ', ' + pergunta_teste[i2].pergunta   );   }
+				
+			               }
+						   
+						   
+						   
+						   
+						   alert('teste8 PERGUNTA atual (dentro da funcao pergunta): ');
+		
+			               for (var i2 = 0; i2 < pergunta.length; i2++) {
+							  
+				           if( i2 < 3 ){   alert( i2 + ',' + pergunta[i2].id   + ', ' + pergunta[i2].pergunta   );   }
+				
+			               }
 
     //Verifica as respostas salvas para saber qual a próxima
     lerArquivo("resposta.json", function(resposta) {
